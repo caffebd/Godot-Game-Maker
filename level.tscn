@@ -25,6 +25,11 @@ position = Vector2( 848, 188 )
 distance = 70
 speed = 60.0
 
+[node name="Zombie3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 914, 190 )
+distance = 70
+speed = 60.0
+
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
 position = Vector2( 394, 381 )
 speed = 40.0
