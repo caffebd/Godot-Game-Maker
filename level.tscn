@@ -16,8 +16,8 @@ tile_data = PoolIntArray( 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0
 position = Vector2( 644, 371 )
 
 [node name="Zombie" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1238, 56 )
-distance = 100
+position = Vector2( 1787, -8 )
+distance = 40
 speed = 80.0
 
 [node name="Zombie2" parent="." instance=ExtResource( 2 )]
