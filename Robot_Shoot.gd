@@ -17,6 +17,13 @@ func _on_Robot_Shoot_area_entered(area):
 	if groups.has("enemy"):
 		queue_free()
 
+func _on_Robot_Shoot_body_entered(body):
+	var groups = body.get_groups()
+	if groups.has("map"):
+		queue_free()
+
+
+
 
 #enable to remove when leaving screen
 
@@ -30,3 +37,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 func _on_Timer_timeout():
 	queue_free()
+
+
+
