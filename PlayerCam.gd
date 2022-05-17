@@ -7,8 +7,6 @@ onready var tween = $Tween
 var shake_amount = 0
 var default_offset = offset
 
-signal shake_cam
-
 
 func _ready():
 	set_process(false)
