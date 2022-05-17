@@ -16,8 +16,8 @@ tile_data = PoolIntArray( 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0
 position = Vector2( 644, 371 )
 
 [node name="Zombie" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1787, -8 )
-distance = 40
+position = Vector2( 1238, 56 )
+distance = 100
 speed = 80.0
 
 [node name="Zombie2" parent="." instance=ExtResource( 2 )]
@@ -25,21 +25,8 @@ position = Vector2( 848, 188 )
 distance = 70
 speed = 60.0
 
-[node name="Zombie3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 914, 190 )
-distance = 70
-speed = 60.0
-
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
 position = Vector2( 394, 381 )
-speed = 40.0
-
-[node name="Ghost3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 286, 379 )
-speed = 40.0
-
-[node name="Ghost4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 508, 378 )
 speed = 40.0
 
 [node name="Ghost2" parent="." instance=ExtResource( 4 )]
@@ -47,6 +34,4 @@ position = Vector2( 762, 382 )
 speed = 40.0
 
 [connection signal="player_detected" from="Ghost" to="Player" method="_on_Ghost_player_detected"]
-[connection signal="player_detected" from="Ghost3" to="Player" method="_on_Ghost_player_detected"]
-[connection signal="player_detected" from="Ghost4" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="player_detected" from="Ghost2" to="Player" method="_on_Ghost_player_detected"]
