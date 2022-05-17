@@ -75,7 +75,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		var shoot = robot_shoot.instance()
 		shoot.direction = myDirection
-		shoot.startPosition = position
+		shoot.startPosition = Vector2(position.x, position.y + 25)
 		get_parent().add_child(shoot)	
 		
 	
@@ -107,6 +107,6 @@ func _on_Ghost_player_detected():
 
 
 
-func _on_Health_body_entered(body):
+func _on_Health_body_entered(_body):
 	$ProgressBar.value +=10
 	

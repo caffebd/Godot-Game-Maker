@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=2]
 [ext_resource path="res://level_tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://Ghost.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Health.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Switch.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TileMapSwitch.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,6 +17,15 @@ position = Vector2( 319, 289 )
 tile_set = ExtResource( 3 )
 format = 1
 tile_data = PoolIntArray( 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0, 131089, 16, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 17, 0, 262155, 2, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 0, 0, 458756, 2, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 0, 0 )
+
+[node name="TileMapSwitch" type="TileMap" parent="." groups=["map"]]
+visible = false
+tile_set = ExtResource( 3 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0 )
+script = ExtResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 308, 369 )
@@ -38,10 +49,6 @@ speed = 60.0
 position = Vector2( 2070, 30 )
 speed = 40.0
 
-[node name="Ghost2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 502, 379 )
-speed = 40.0
-
 [node name="Ghost3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1482, 410 )
 speed = 40.0
@@ -52,8 +59,11 @@ position = Vector2( 1158, 88 )
 [node name="Health2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1412, 90 )
 
+[node name="Switch" parent="." instance=ExtResource( 6 )]
+position = Vector2( 571, 395 )
+
 [connection signal="player_detected" from="Ghost" to="Player" method="_on_Ghost_player_detected"]
-[connection signal="player_detected" from="Ghost2" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="player_detected" from="Ghost3" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="body_entered" from="Health" to="Player" method="_on_Health_body_entered"]
 [connection signal="body_entered" from="Health2" to="Player" method="_on_Health_body_entered"]
+[connection signal="control" from="Switch" to="TileMapSwitch" method="_on_Switch_control"]

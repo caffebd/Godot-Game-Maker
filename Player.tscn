@@ -86,5 +86,4 @@ value = 100.0
 percent_visible = false
 
 [connection signal="player_hit" from="." to="." method="_on_RobotPlayer_player_hit"]
-[connection signal="shake_cam" from="PlayerCam" to="PlayerCam" method="_on_PlayerCam_shake_cam"]
 [connection signal="timeout" from="PlayerCam/Timer" to="PlayerCam" method="_on_Timer_timeout"]
