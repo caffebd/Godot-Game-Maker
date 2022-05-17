@@ -18,6 +18,12 @@ func _process(delta):
 		if position.x <= startPos.x:
 			$AnimatedSprite.flip_h = false
 
-
+	
 	
 
+
+
+func _on_Area2D_area_entered(area):
+	var groups = area.get_groups()
+	if groups.has("robot_shoot"):
+		queue_free()	

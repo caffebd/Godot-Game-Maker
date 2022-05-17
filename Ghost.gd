@@ -27,3 +27,9 @@ func _process(delta):
 
 	
 # Replace with function body.
+
+
+func _on_Ghost_area_entered(area):
+	var groups = area.get_groups()
+	if groups.has("robot_shoot"):
+		queue_free()	
