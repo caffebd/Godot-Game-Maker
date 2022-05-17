@@ -2,6 +2,10 @@ extends Area2D
 
 var speed: int = 500
 var direction: int = 1
+var startPosition: Vector2 = Vector2.ZERO
+
+func _ready():
+	position = startPosition
 
 func _process(delta):
 	$Sprite.flip_h = direction < 0

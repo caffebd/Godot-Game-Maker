@@ -75,7 +75,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack"):
 		var shoot = robot_shoot.instance()
 		shoot.direction = myDirection
-		add_child(shoot)	
+		shoot.startPosition = position
+		get_parent().add_child(shoot)	
+		
 	
 	
 		
