@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/robot/character_robot_attack2.png" type="Texture" id=1]
 [ext_resource path="res://assets/robot/character_robot_walk6.png" type="Texture" id=2]
@@ -16,22 +16,23 @@
 [ext_resource path="res://Player.gd" type="Script" id=14]
 [ext_resource path="res://assets/robot/character_robot_idle.png" type="Texture" id=15]
 [ext_resource path="res://assets/robot/character_robot_wide.png" type="Texture" id=16]
+[ext_resource path="res://PlayerCam.gd" type="Script" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "idle",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
+"name": "attack",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "duck",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 13 ) ],
@@ -39,10 +40,10 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "attack",
-"speed": 8.0
+"name": "idle",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -66,8 +67,13 @@ animation = "attack"
 position = Vector2( -2, 20 )
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="PlayerCam" type="Camera2D" parent="."]
 current = true
+script = ExtResource( 17 )
+
+[node name="Timer" type="Timer" parent="PlayerCam"]
+
+[node name="Tween" type="Tween" parent="PlayerCam"]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 margin_left = -40.0
@@ -80,3 +86,5 @@ value = 100.0
 percent_visible = false
 
 [connection signal="player_hit" from="." to="." method="_on_RobotPlayer_player_hit"]
+[connection signal="shake_cam" from="PlayerCam" to="PlayerCam" method="_on_PlayerCam_shake_cam"]
+[connection signal="timeout" from="PlayerCam/Timer" to="PlayerCam" method="_on_Timer_timeout"]
