@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Health.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Switch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TileMapSwitch.gd" type="Script" id=7]
+[ext_resource path="res://Ladder.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,7 +17,7 @@ position = Vector2( 319, 289 )
 [node name="TileMap" type="TileMap" parent="." groups=["map"]]
 tile_set = ExtResource( 3 )
 format = 1
-tile_data = PoolIntArray( 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0, 131089, 16, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 17, 0, 262155, 2, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 0, 0, 458756, 2, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 0, 0 )
+tile_data = PoolIntArray( -196601, 22, 0, -131065, 21, 0, -131064, 19, 0, -131063, 19, 0, -131062, 19, 0, -131061, 19, 0, -131060, 19, 0, -131059, 19, 0, -131058, 19, 0, -65529, 21, 0, 7, 21, 0, 65543, 21, 0, 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0, 131079, 21, 0, 131089, 19, 0, 131090, 19, 0, 131091, 19, 0, 131092, 19, 0, 131093, 19, 0, 196615, 21, 0, 262151, 21, 0, 262155, 20, 0, 262156, 20, 0, 262157, 20, 0, 262158, 20, 0, 262159, 20, 0, 327687, 21, 0, 393223, 21, 0, 458756, 20, 0, 458757, 20, 0, 458758, 20, 0, 458759, 20, 0, 458760, 20, 0, 458761, 20, 0, 458762, 20, 0, 458763, 20, 0, 720909, 20, 0, 720910, 20, 0, 720911, 20, 0, 720912, 20, 0, 720913, 20, 0, 720914, 20, 0, 720915, 20, 0, 720916, 20, 0, 720917, 20, 0, 720918, 20, 0 )
 
 [node name="TileMapSwitch" type="TileMap" parent="." groups=["map"]]
 visible = false
@@ -24,8 +25,14 @@ tile_set = ExtResource( 3 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0 )
+tile_data = PoolIntArray( 458749, 19, 0, 458750, 19, 0, 458751, 19, 0, 393216, 19, 0, 393217, 19, 0 )
 script = ExtResource( 7 )
+
+[node name="Ladder" parent="." instance=ExtResource( 8 )]
+position = Vector2( 478, 323 )
+
+[node name="CollisionShape2D" parent="Ladder" index="0"]
+position = Vector2( 1.5, -171.5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 308, 369 )
@@ -50,20 +57,24 @@ position = Vector2( 2070, 30 )
 speed = 40.0
 
 [node name="Ghost3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1482, 410 )
+position = Vector2( 1231, 647 )
 speed = 40.0
 
 [node name="Health" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1158, 88 )
 
 [node name="Health2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1412, 90 )
+position = Vector2( 1422, 659 )
 
 [node name="Switch" parent="." instance=ExtResource( 6 )]
-position = Vector2( 571, 395 )
+position = Vector2( 936, 647 )
 
+[connection signal="body_entered" from="Ladder" to="Player" method="_on_Ladder_body_entered"]
+[connection signal="body_exited" from="Ladder" to="Player" method="_on_Ladder_body_exited"]
 [connection signal="player_detected" from="Ghost" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="player_detected" from="Ghost3" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="body_entered" from="Health" to="Player" method="_on_Health_body_entered"]
 [connection signal="body_entered" from="Health2" to="Player" method="_on_Health_body_entered"]
 [connection signal="control" from="Switch" to="TileMapSwitch" method="_on_Switch_control"]
+
+[editable path="Ladder"]

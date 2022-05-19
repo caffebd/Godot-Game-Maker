@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
-const GRAVITY = 400.0
+var gravity = 400.0
 const WALK_SPEED = 200
 const JUMP_FORCE = 620
 
 signal player_hit
+
+var onLadder: bool = false
 
 
 var velocity = Vector2()
@@ -20,7 +22,7 @@ func _ready():
 	startPosition = position
 
 func _physics_process(delta):
-	velocity.y += delta * GRAVITY
+	velocity.y += delta * gravity
 	
 	if not is_attacking:
 		if Input.is_action_pressed("ui_left"):
@@ -43,14 +45,33 @@ func _physics_process(delta):
 
 
 
-
+	if not onLadder:
+		gravity = 400
 	# Check for jumping. is_on_floor() must be called after movement code.
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = -JUMP_FORCE
+		if is_on_floor() and Input.is_action_just_pressed("jump"):
+			velocity.y = -JUMP_FORCE
 
-	if not is_on_floor():
-		$AnimatedSprite.animation = "jump"	
-		$AnimatedSprite.play()
+		if not is_on_floor():
+			$AnimatedSprite.animation = "jump"	
+			$AnimatedSprite.play()
+	else:
+		gravity = 0
+		if Input.is_action_pressed("jump"):
+			velocity.y = -WALK_SPEED
+			$AnimatedSprite.animation = "climb"	
+			$AnimatedSprite.play()
+		elif Input.is_action_pressed("duck"):
+			velocity.y = WALK_SPEED
+			$AnimatedSprite.animation = "climb"	
+			$AnimatedSprite.play()
+		else:
+			velocity.y=0
+			#$AnimatedSprite.animation = "climb"
+			if not is_on_floor():
+				$AnimatedSprite.stop()
+			
+		
+			
 		
 	
 #	if is_on_floor() and Input.is_action_pressed("attack"):
@@ -81,7 +102,7 @@ func _physics_process(delta):
 	
 	
 		
-	velocity.y += GRAVITY * delta
+	velocity.y += gravity * delta
 
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
@@ -110,3 +131,11 @@ func _on_Ghost_player_detected():
 func _on_Health_body_entered(_body):
 	$ProgressBar.value +=10
 	
+
+
+func _on_Ladder_body_entered(body):
+	onLadder = true
+
+
+func _on_Ladder_body_exited(body):
+	onLadder = false
