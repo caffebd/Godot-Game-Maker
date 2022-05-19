@@ -17,7 +17,7 @@ position = Vector2( 319, 289 )
 [node name="TileMap" type="TileMap" parent="." groups=["map"]]
 tile_set = ExtResource( 3 )
 format = 1
-tile_data = PoolIntArray( -196601, 22, 0, -131065, 21, 0, -131064, 19, 0, -131063, 19, 0, -131062, 19, 0, -131061, 19, 0, -131060, 19, 0, -131059, 19, 0, -131058, 19, 0, -65529, 21, 0, 7, 21, 0, 65543, 21, 0, 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0, 131079, 21, 0, 131089, 19, 0, 131090, 19, 0, 131091, 19, 0, 131092, 19, 0, 131093, 19, 0, 196615, 21, 0, 262151, 21, 0, 262155, 20, 0, 262156, 20, 0, 262157, 20, 0, 262158, 20, 0, 262159, 20, 0, 327687, 21, 0, 393223, 21, 0, 458756, 20, 0, 458757, 20, 0, 458758, 20, 0, 458759, 20, 0, 458760, 20, 0, 458761, 20, 0, 458762, 20, 0, 458763, 20, 0, 720909, 20, 0, 720910, 20, 0, 720911, 20, 0, 720912, 20, 0, 720913, 20, 0, 720914, 20, 0, 720915, 20, 0, 720916, 20, 0, 720917, 20, 0, 720918, 20, 0 )
+tile_data = PoolIntArray( -327664, 19, 0, -327663, 19, 0, -327662, 19, 0, -327661, 19, 0, -327660, 19, 0, -327659, 19, 0, -327658, 19, 0, -327657, 19, 0, -262128, 18, 0, -262127, 18, 0, -262126, 18, 0, -262125, 18, 0, -262124, 18, 0, -262123, 18, 0, -262122, 18, 0, -262121, 18, 0, -131064, 19, 0, -131063, 19, 0, -131062, 19, 0, -131061, 19, 0, -131060, 19, 0, -131059, 19, 0, -131058, 19, 0, 65562, 16, 0, 65563, 15, 0, 65564, 15, 0, 65565, 17, 0, 262155, 20, 0, 262156, 20, 0, 262157, 20, 0, 262158, 20, 0, 262159, 20, 0, 458756, 20, 0, 458757, 20, 0, 458758, 20, 0, 458759, 20, 0, 458760, 20, 0, 458761, 20, 0, 458762, 20, 0, 458763, 20, 0, 589846, -1073741806, 0, 655382, -1073741806, 0, 720909, 20, 0, 720910, 20, 0, 720911, 20, 0, 720912, 20, 0, 720913, 20, 0, 720914, 20, 0, 720915, 20, 0, 720916, 20, 0, 720917, 20, 0, 720918, 20, 0 )
 
 [node name="TileMapSwitch" type="TileMap" parent="." groups=["map"]]
 visible = false
@@ -25,7 +25,7 @@ tile_set = ExtResource( 3 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 458749, 19, 0, 458750, 19, 0, 458751, 19, 0, 393216, 19, 0, 393217, 19, 0 )
+tile_data = PoolIntArray( -196601, 22, 0, -131065, 21, 0, -65529, 21, 0, 7, 21, 0, 65543, 21, 0, 131079, 21, 0, 196615, 21, 0, 262151, 21, 0, 327687, 21, 0, 393223, 21, 0 )
 script = ExtResource( 7 )
 
 [node name="Ladder" parent="." instance=ExtResource( 8 )]
@@ -38,12 +38,12 @@ position = Vector2( 1.5, -171.5 )
 position = Vector2( 308, 369 )
 
 [node name="Zombie" parent="." instance=ExtResource( 2 )]
-position = Vector2( 950, 178 )
+position = Vector2( 951, 194 )
 distance = 100
 speed = 80.0
 
 [node name="Zombie2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 778, 188 )
+position = Vector2( 610, 385 )
 distance = 70
 speed = 60.0
 
@@ -53,28 +53,38 @@ distance = 70
 speed = 60.0
 
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2070, 30 )
+position = Vector2( 1210, -362 )
 speed = 40.0
 
 [node name="Ghost3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1231, 647 )
+position = Vector2( 1074, 643 )
+speed = 40.0
+
+[node name="Ghost4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1074, 643 )
 speed = 40.0
 
 [node name="Health" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1158, 88 )
 
 [node name="Health2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1422, 659 )
+position = Vector2( 915, -161 )
 
 [node name="Switch" parent="." instance=ExtResource( 6 )]
-position = Vector2( 936, 647 )
+position = Vector2( 1367, 622 )
+
+[node name="AnimatedSprite" parent="Switch" index="0"]
+flip_h = true
 
 [connection signal="body_entered" from="Ladder" to="Player" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Player" method="_on_Ladder_body_exited"]
 [connection signal="player_detected" from="Ghost" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="player_detected" from="Ghost3" to="Player" method="_on_Ghost_player_detected"]
+[connection signal="player_detected" from="Ghost4" to="Player" method="_on_Ghost_player_detected"]
 [connection signal="body_entered" from="Health" to="Player" method="_on_Health_body_entered"]
 [connection signal="body_entered" from="Health2" to="Player" method="_on_Health_body_entered"]
 [connection signal="control" from="Switch" to="TileMapSwitch" method="_on_Switch_control"]
+[connection signal="control" from="Switch" to="Ladder" method="_on_Switch_control"]
 
 [editable path="Ladder"]
+[editable path="Switch"]
