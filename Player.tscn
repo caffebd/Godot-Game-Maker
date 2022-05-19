@@ -76,6 +76,7 @@ shape = SubResource( 2 )
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 1.25, 1.25 )
 script = ExtResource( 17 )
 
 [node name="Timer" type="Timer" parent="PlayerCam"]
