@@ -8,7 +8,6 @@ signal player_hit
 
 var onLadder: bool = false
 
-
 var velocity = Vector2()
 
 var is_attacking:bool = false
@@ -94,6 +93,7 @@ func _physics_process(delta):
 		is_attacking = false
 	
 	if Input.is_action_just_pressed("attack"):
+		print ($ProgressBar.value)
 		var shoot = robot_shoot.instance()
 		shoot.direction = myDirection
 		shoot.startPosition = Vector2(position.x, position.y + 25)
@@ -108,8 +108,7 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 
 	if position.y > startPosition.y + 1500:
-		position = get_parent().get_node("Position2D").position
-		$PlayerCam.shake(1000)
+		restart(false)
 
 
 	for i in get_slide_count():
@@ -118,14 +117,28 @@ func _physics_process(delta):
 		if gps.has("enemy"):
 			emit_signal("player_hit")
 
+func restart(reset):
+	position = get_parent().get_node("Position2D").position
+	$PlayerCam.shake(1000)
+	
+	if reset:
+		$ResetTimer.start()
+
+func check_health():
+	if $ProgressBar.value <= 0:
+		restart(true)
 
 func _on_RobotPlayer_player_hit():
-	$ProgressBar.value -=0.5 # Replace with function body.
-
+	if $ProgressBar.value > 0:
+		$ProgressBar.value -=0.5 # Replace with function body.
+	else:
+		restart(true)
 
 func _on_Ghost_player_detected():
-	$ProgressBar.value -=0.5 # Replace with function body.
-
+	if $ProgressBar.value > 0:
+		$ProgressBar.value -=0.5 # Replace with function body.
+	else:
+		restart(true)
 
 
 func _on_Health_body_entered(_body):
@@ -139,3 +152,7 @@ func _on_Ladder_body_entered(_body):
 
 func _on_Ladder_body_exited(_body):
 	onLadder = false
+
+
+func _on_ResetTimer_timeout():
+	$ProgressBar.value = 100

@@ -87,7 +87,7 @@ move_to = Vector2( 500, 0 )
 active = false
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1071, -389 )
+position = Vector2( 348, 384 )
 
 [connection signal="body_entered" from="Ladder" to="Player" method="_on_Ladder_body_entered"]
 [connection signal="body_exited" from="Ladder" to="Player" method="_on_Ladder_body_exited"]
