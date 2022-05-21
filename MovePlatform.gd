@@ -13,6 +13,8 @@ onready var tween: Tween = $Base/Tween
 
 var direction_forward = true
 
+var audioPlaying: bool = false
+
 func _ready():
 	if not Engine.is_editor_hint():
 		set_tween(move_from, move_to)
@@ -20,6 +22,13 @@ func _ready():
 func _process(_delta):
 	if Engine.is_editor_hint():
 		update()
+#	else:
+#		if active and not audioPlaying:
+#			$Base/PlatformSound.play()
+#			audioPlaying = true
+#		if not active:
+#			$Base/PlatformSound.stop()
+#			audioPlaying = false
 
 func _draw():
 	if Engine.is_editor_hint():
@@ -30,11 +39,16 @@ func _draw():
 
 func set_tween(from, to):
 	if active:
-		tween.interpolate_property(base, "position", from, to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		tween.start()
+		var _moving = tween.interpolate_property(base, "position", from, to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		var _moveStart = tween.start()
+		if not $Base/PlatformSound.playing:
+			$Base/PlatformSound.play()
+	else:
+		if  $Base/PlatformSound.playing:
+			$Base/PlatformSound.stop()
 
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	
 	direction_forward = !direction_forward
 	

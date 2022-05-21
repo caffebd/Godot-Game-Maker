@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/MovingPlatform/move_platform.png" type="Texture" id=1]
 [ext_resource path="res://MovePlatform.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/motor.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 114.5, 30 )
@@ -23,5 +24,9 @@ position = Vector2( -0.5, -2 )
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="Base"]
+
+[node name="PlatformSound" type="AudioStreamPlayer2D" parent="Base"]
+stream = ExtResource( 3 )
+max_distance = 1000.0
 
 [connection signal="tween_completed" from="Base/Tween" to="." method="_on_Tween_tween_completed"]

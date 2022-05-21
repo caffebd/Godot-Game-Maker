@@ -6,6 +6,7 @@ var startPosition: Vector2 = Vector2.ZERO
 
 func _ready():
 	position = startPosition
+	$ShootSound.play()
 
 func _process(delta):
 	$Sprite.flip_h = direction < 0
