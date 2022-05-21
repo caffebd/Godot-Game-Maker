@@ -10,10 +10,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("use") and can_use == true:
 		switch_on = !switch_on
 		if switch_on:
+			$SoundOn.play()
 			$AnimatedSprite.animation = "on"
 			$AnimatedSprite.play()
 			emit_signal("control", true)
 		else:
+			$SoundOff.play()
 			$AnimatedSprite.animation = "off"
 			$AnimatedSprite.play()
 			emit_signal("control", false)
