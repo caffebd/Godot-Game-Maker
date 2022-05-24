@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/robot/character_robot_attack2.png" type="Texture" id=1]
 [ext_resource path="res://assets/robot/character_robot_walk6.png" type="Texture" id=2]
@@ -14,23 +14,46 @@
 [ext_resource path="res://assets/robot/character_robot_duck.png" type="Texture" id=12]
 [ext_resource path="res://assets/robot/character_robot_walk7.png" type="Texture" id=13]
 [ext_resource path="res://Player.gd" type="Script" id=14]
-[ext_resource path="res://assets/robot/character_robot_idle.png" type="Texture" id=15]
-[ext_resource path="res://assets/robot/character_robot_wide.png" type="Texture" id=16]
 [ext_resource path="res://PlayerCam.gd" type="Script" id=17]
 [ext_resource path="res://assets/robot/character_robot_climb0.png" type="Texture" id=18]
 [ext_resource path="res://assets/robot/character_robot_climb1.png" type="Texture" id=19]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-4.png" type="Texture" id=20]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-3.png" type="Texture" id=21]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-12.png" type="Texture" id=22]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-6.png" type="Texture" id=23]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-14.png" type="Texture" id=24]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-1.png" type="Texture" id=25]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-2.png" type="Texture" id=26]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-5.png" type="Texture" id=27]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-7.png" type="Texture" id=28]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-9.png" type="Texture" id=29]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-11.png" type="Texture" id=30]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-13.png" type="Texture" id=31]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-15.png" type="Texture" id=32]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-10.png" type="Texture" id=33]
+[ext_resource path="res://assets/Tiger/Proshanto/prosanto-8.png" type="Texture" id=34]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "attack",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "climb",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "walk",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "attack",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -39,15 +62,10 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "walk",
+"name": "walkOld",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "climb",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 25 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.0
@@ -67,8 +85,10 @@ bg_color = Color( 0.886275, 0.129412, 0.129412, 1 )
 script = ExtResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 5 )
 frames = SubResource( 1 )
-animation = "climb"
+animation = "walk"
+frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 20 )
@@ -76,7 +96,6 @@ shape = SubResource( 2 )
 
 [node name="PlayerCam" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.25, 1.25 )
 script = ExtResource( 17 )
 
 [node name="Timer" type="Timer" parent="PlayerCam"]
@@ -84,10 +103,10 @@ script = ExtResource( 17 )
 [node name="Tween" type="Tween" parent="PlayerCam"]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = -40.0
-margin_top = -48.0
-margin_right = 44.0
-margin_bottom = -34.0
+margin_left = -39.0
+margin_top = -73.0
+margin_right = 45.0
+margin_bottom = -59.0
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 100.0

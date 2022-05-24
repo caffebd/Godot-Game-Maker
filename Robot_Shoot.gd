@@ -37,7 +37,8 @@ func _on_VisibilityNotifier2D_screen_exited():
 #enables shooting of enemies off screen
 
 func _on_Timer_timeout():
-	queue_free()
+	#queue_free()
+	pass
 
 
 
