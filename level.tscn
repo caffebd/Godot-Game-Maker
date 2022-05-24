@@ -88,7 +88,7 @@ move_to = Vector2( 500, 0 )
 active = false
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 2230, 172 )
+position = Vector2( 357, 355 )
 
 [node name="FrogCurve" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1871, 204 )

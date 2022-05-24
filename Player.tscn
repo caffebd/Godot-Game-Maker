@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/robot/character_robot_attack2.png" type="Texture" id=1]
 [ext_resource path="res://assets/robot/character_robot_walk6.png" type="Texture" id=2]
@@ -14,24 +14,11 @@
 [ext_resource path="res://assets/robot/character_robot_duck.png" type="Texture" id=12]
 [ext_resource path="res://assets/robot/character_robot_walk7.png" type="Texture" id=13]
 [ext_resource path="res://Player.gd" type="Script" id=14]
+[ext_resource path="res://assets/robot/character_robot_idle.png" type="Texture" id=15]
+[ext_resource path="res://assets/robot/character_robot_wide.png" type="Texture" id=16]
 [ext_resource path="res://PlayerCam.gd" type="Script" id=17]
 [ext_resource path="res://assets/robot/character_robot_climb0.png" type="Texture" id=18]
 [ext_resource path="res://assets/robot/character_robot_climb1.png" type="Texture" id=19]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-4.png" type="Texture" id=20]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-3.png" type="Texture" id=21]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-12.png" type="Texture" id=22]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-6.png" type="Texture" id=23]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-14.png" type="Texture" id=24]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-1.png" type="Texture" id=25]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-2.png" type="Texture" id=26]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-5.png" type="Texture" id=27]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-7.png" type="Texture" id=28]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-9.png" type="Texture" id=29]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-11.png" type="Texture" id=30]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-13.png" type="Texture" id=31]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-15.png" type="Texture" id=32]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-10.png" type="Texture" id=33]
-[ext_resource path="res://assets/Tiger/Proshanto/prosanto-8.png" type="Texture" id=34]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,10 +32,10 @@ animations = [ {
 "name": "climb",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 27 ), ExtResource( 23 ), ExtResource( 28 ), ExtResource( 34 ), ExtResource( 29 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 32 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "walk",
-"speed": 25.0
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 1 ) ],
 "loop": true,
@@ -60,12 +47,7 @@ animations = [ {
 "name": "duck",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "walkOld",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "idle",
 "speed": 1.0
@@ -88,7 +70,6 @@ script = ExtResource( 14 )
 position = Vector2( 0, 5 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 20 )
