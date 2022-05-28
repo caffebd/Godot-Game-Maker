@@ -36,13 +36,14 @@ radius = 23.0
 height = 2.0
 
 [node name="Ghost" type="Area2D" groups=["enemy"]]
+collision_layer = 2
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2, 2 )
 frames = SubResource( 5 )
 animation = "float"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 10.0
+content_margin_top = 5.0
+bg_color = Color( 0, 0, 0, 1 )
+
+[node name="SpokenText" type="RichTextLabel"]
+margin_left = -223.0
+margin_top = 82.0
+margin_right = 224.0
+margin_bottom = 138.0
+custom_styles/normal = SubResource( 5 )

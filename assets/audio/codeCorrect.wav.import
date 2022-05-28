@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/codeCorrect.wav-3f6bac0f0ee02a5a7ed83a9780b05b24.sample"
+
+[deps]
+
+source_file="res://assets/audio/codeCorrect.wav"
+dest_files=[ "res://.import/codeCorrect.wav-3f6bac0f0ee02a5a7ed83a9780b05b24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

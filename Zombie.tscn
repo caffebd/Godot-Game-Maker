@@ -25,12 +25,12 @@ extents = Vector2( 28.5, 41 )
 extents = Vector2( 32.5, 43 )
 
 [node name="Zombie" type="StaticBody2D" groups=["enemy"]]
+collision_layer = 2
 script = ExtResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 7
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

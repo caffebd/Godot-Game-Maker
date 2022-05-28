@@ -24,7 +24,7 @@ func _ready():
 
 func _process(delta):
 	x_curve += delta
-	var y_curve = hop_curve.interpolate(x_curve)
+	y_curve = hop_curve.interpolate(x_curve)
 	position = Vector2(position.x + x_curve*x_curve_multiplier, (y_curve*100 + y_offset))
 	if x_curve >=1:
 		 x_curve = 0.0
