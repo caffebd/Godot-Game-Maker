@@ -1,13 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Font/diffusion/ttf-unhinted/diffusion-regular.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=6]
+size = 10
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 content_margin_left = 10.0
 content_margin_top = 5.0
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0.866667 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 1, 1, 1 )
+border_blend = true
 
 [node name="SpokenText" type="RichTextLabel"]
-margin_left = -223.0
-margin_top = 82.0
-margin_right = 224.0
-margin_bottom = 138.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -146.0
+margin_right = 4.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 150, 20 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_styles/normal = SubResource( 5 )
+fit_content_height = true
+scroll_active = false

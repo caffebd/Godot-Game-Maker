@@ -27,6 +27,9 @@ const robot_shoot = preload("res://Robot_Shoot.tscn")
 
 func _ready():
 	startPosition = position
+#	Inventory.add_to_inventory("iTime15")
+#	Inventory.add_to_inventory("key")
+	update_inventory()
 
 func _physics_process(delta):
 	velocity.y += delta * gravity

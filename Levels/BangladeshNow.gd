@@ -3,7 +3,7 @@ extends Node2D
 signal continue_conversation
 signal inv_tutorial
 
-onready var speechWindow: RichTextLabel = get_node("../Player/MainSpokenText")
+#onready var speechWindow: RichTextLabel = get_node("../Player/MainSpokenText")
 
 var shopDone = false
 var farmerDone = false
@@ -43,7 +43,6 @@ func _conversation(personA: String, personB: String):
 	$RobotPlayer/MainSpokenText.visible = true
 	$RobotPlayer/Speaker.visible = true
 
-	var part = 0
 	var partA = Level1SpokenText.people[personA]
 	var partB = []
 	if personB != "":
@@ -84,7 +83,7 @@ func _conversation(personA: String, personB: String):
 	$RobotPlayer.is_active = true
 
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("attack"):
 		emit_signal("continue_conversation")
 	if Input.is_action_just_pressed("show_inventory"):
@@ -93,7 +92,7 @@ func _input(event):
 
 
 
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_completed(_object, _key):
 	if not scientistDone:
 		scientistDone = true
 		_conversation("roksanaScientist", "Scientist")

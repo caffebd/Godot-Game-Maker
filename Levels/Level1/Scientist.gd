@@ -14,5 +14,5 @@ func scientist_leave():
 		$TweenLeave.start()	
 
 
-func _on_TweenLeave_tween_completed(object, key):
+func _on_TweenLeave_tween_completed(_object, _key):
 	queue_free()

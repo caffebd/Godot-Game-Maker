@@ -9,7 +9,7 @@ func _on_ItemList_item_selected(index):
 		if Inventory.canChangeLevel:
 			
 			var loadLevel = Inventory.levels[Inventory.currentLevel]
-			get_tree().change_scene(loadLevel)
+			var _nextScene = get_tree().change_scene(loadLevel)
 		return
 	
 	if Inventory.current_action_object != null:
