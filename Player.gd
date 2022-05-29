@@ -171,12 +171,13 @@ func _on_Health_body_entered(_body):
 
 
 func _on_Ladder_body_entered(_body):
-	print ("on ladder")
-	onLadder = true
+	if _body.get_groups().has("player"):
+		onLadder = true
 
 
 func _on_Ladder_body_exited(_body):
-	onLadder = false
+	if _body.get_groups().has("player"):
+		onLadder = false
 
 
 func _on_ResetTimer_timeout():
@@ -229,3 +230,14 @@ func show_player_info_box(msg: String):
 func hide_player_info_box():
 	$PlayerCam/InfoBox.visible = false
 	
+
+
+func _on_Ladders_body_entered(body):
+	print ("HI")
+	if body.get_groups().has("player"):
+		onLadder = true
+
+
+func _on_Ladders_body_exited(body):
+	if body.get_groups().has("player"):
+		onLadder = false

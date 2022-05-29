@@ -15,9 +15,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "eat",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 2 ) ],
@@ -25,28 +25,31 @@ animations = [ {
 "name": "walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "idle",
+"name": "eat",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 73.0
-height = 142.0
+radius = 32.9999
+height = 24.0003
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 87.0
-height = 326.0
+radius = 28.9999
+height = 154.0
 
 [node name="Cow" type="StaticBody2D" groups=["enemy"]]
 collision_layer = 2
 script = ExtResource( 10 )
+distance = 600
+speed = 300.0
+moving = true
 
 [node name="CowAnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
-animation = "eat"
-flip_h = true
+animation = "idle"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -55,6 +58,7 @@ shape = SubResource( 2 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -2, -4 )
 rotation = 1.5708
 shape = SubResource( 3 )
 
@@ -62,7 +66,8 @@ shape = SubResource( 3 )
 
 [node name="hint" type="Sprite" parent="."]
 visible = false
-position = Vector2( 1, -146 )
+position = Vector2( -1, -47 )
+scale = Vector2( 0.28125, 0.3125 )
 texture = ExtResource( 11 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

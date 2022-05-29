@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-onready var player = get_node("../Player")
+onready var player = get_node("../RobotPlayer")
 export var distance: int = 400
 export var speed: float = 100
 export var moving: bool = false
@@ -17,8 +17,11 @@ func _ready():
 func _process(delta):
 	if not moving:
 		return
+	
+	$CowAnimatedSprite.animation = "walk"
+	$CowAnimatedSprite.play()
 		
-	if position.x < startPos.x + distance && !$CowAnimatedSprite.flip_h:	
+	if position.x <= startPos.x + distance && !$CowAnimatedSprite.flip_h:	
 		position.x += speed * delta
 		if position.x >= startPos.x + distance:
 			$CowAnimatedSprite.flip_h = true
@@ -29,6 +32,7 @@ func _process(delta):
 
 func check_action(obj, index):
 	if obj == "grass":
+		moving = false
 		$BodyCollision.disabled=true
 		$CowAnimatedSprite.animation = "eat"
 		$CowAnimatedSprite.play()

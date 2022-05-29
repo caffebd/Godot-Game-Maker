@@ -182,7 +182,7 @@ position = Vector2( -1.625, -23.5 )
 shape = SubResource( 4 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 58, -28 )
+position = Vector2( 52, -197 )
 
 [node name="mother" type="StaticBody2D" parent="."]
 position = Vector2( 1673, -578 )
