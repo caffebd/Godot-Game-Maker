@@ -217,6 +217,8 @@ func update_inventory():
 		match item:
 			"fruit":
 				$InventorySystem/ItemList.add_icon_item(Inventory.theFruit)			
+			"book":
+				$InventorySystem/ItemList.add_icon_item(Inventory.theBook)				
 			"key":
 				$InventorySystem/ItemList.add_icon_item(Inventory.theKey)				
 			"grass":
@@ -229,18 +231,23 @@ func drop_item(item: String, index: int):
 	match item:
 		"fruit":
 			var loadItem = preload("res://Levels/Level2/Fruit.tscn")	
-			var itemInstance = loadItem.instance()
-			var newPos = Vector2.ZERO
-			newPos.x = position.x + 24
-			newPos.y = position.y + 12
-			if $AnimatedSprite.flip_h:
-				newPos.x -= 48
-			
-			itemInstance.position = newPos
-			get_parent().add_child(itemInstance)
-			Inventory.myInventory.remove(index)
-			update_inventory()
+			create_dropped_item(loadItem, index)
+		"book":
+			var loadItem = preload("res://Levels/Level3/Book.tscn")	
+			create_dropped_item(loadItem, index)
 
+func create_dropped_item(loadItem, index):
+	var itemInstance = loadItem.instance()
+	var newPos = Vector2.ZERO
+	newPos.x = position.x + 24
+	newPos.y = position.y + 12
+	if $AnimatedSprite.flip_h:
+		newPos.x -= 48
+			
+	itemInstance.position = newPos
+	get_parent().add_child(itemInstance)
+	Inventory.myInventory.remove(index)
+	update_inventory()	
 
 func show_player_info_box(msg: String):
 	$PlayerCam/InfoBox.text = msg

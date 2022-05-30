@@ -177,6 +177,25 @@ margin_top = -136.0
 margin_right = 132.0
 margin_bottom = -96.0
 
+[node name="Buttons" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="YesButton" type="Button" parent="Buttons"]
+margin_left = -40.0
+margin_top = -47.0
+margin_right = -7.0
+margin_bottom = -27.0
+text = "YES"
+
+[node name="NoButton" type="Button" parent="Buttons"]
+margin_left = 9.0
+margin_top = -47.0
+margin_right = 42.0
+margin_bottom = -27.0
+text = "NO"
+
 [connection signal="player_hit" from="." to="." method="_on_RobotPlayer_player_hit"]
 [connection signal="timeout" from="PlayerCam/Timer" to="PlayerCam" method="_on_Timer_timeout"]
 [connection signal="timeout" from="ResetTimer" to="." method="_on_ResetTimer_timeout"]

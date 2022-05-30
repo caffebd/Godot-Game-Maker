@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/tiles-pixel/grass-tile.png" type="Texture" id=1]
 [ext_resource path="res://assets/tiles-pixel/tileYellow_04.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Levels/Level2/DinoSmall.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/forest/20736273.jpeg" type="Texture" id=7]
 [ext_resource path="res://Levels/Level2/Fruit.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Levels/LevelTest.gd" type="Script" id=9]
+[ext_resource path="res://Levels/Level2/Mum.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Level3/Book.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -71,6 +74,7 @@ extents = Vector2( 6.5, 252.75 )
 extents = Vector2( 8, 178.5 )
 
 [node name="LevelTest" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="TestTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -132,13 +136,24 @@ speed = 50.0
 position = Vector2( -83, -192 )
 
 [node name="DinoSmall" parent="." instance=ExtResource( 6 )]
-position = Vector2( -10, 81 )
+position = Vector2( -381, -259 )
 distance = 100
 speed = 70.0
 moving = true
 
 [node name="Fruit" parent="." instance=ExtResource( 8 )]
-position = Vector2( -418, 85 )
+position = Vector2( 44, 83 )
 
+[node name="Mum" parent="." instance=ExtResource( 10 )]
+position = Vector2( -458, 73 )
+
+[node name="Book" parent="." instance=ExtResource( 11 )]
+position = Vector2( -105, 82 )
+
+[connection signal="pressed" from="RobotPlayer/Buttons/YesButton" to="." method="_on_YesButton_pressed"]
+[connection signal="pressed" from="RobotPlayer/Buttons/NoButton" to="." method="_on_NoButton_pressed"]
 [connection signal="body_entered" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_entered"]
 [connection signal="body_exited" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_exited"]
+[connection signal="body_entered" from="Mum" to="." method="_on_Mum_body_entered"]
+
+[editable path="RobotPlayer"]
