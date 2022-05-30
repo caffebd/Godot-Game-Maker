@@ -74,9 +74,10 @@ func _conversation(personA: String, personB: String):
 		Inventory.add_to_inventory("iTime15")
 		$RobotPlayer.update_inventory()
 		$RobotPlayer.show_player_info_box("Press 'Tab' to open inventory")
+		$RobotPlayer/iTime.visible = true
 		$RobotPlayer.is_active = true
 		yield (self, "inv_tutorial")
-		$RobotPlayer.show_player_info_box("Tap on the iTime15")
+		$RobotPlayer.show_player_info_box("Tap on the iTime15")		
 		Inventory.currentLevel += 1
 		Inventory.canChangeLevel = true
 		#$RobotPlayer.open_inventory()

@@ -155,5 +155,6 @@ position = Vector2( -105, 82 )
 [connection signal="body_entered" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_entered"]
 [connection signal="body_exited" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_exited"]
 [connection signal="body_entered" from="Mum" to="." method="_on_Mum_body_entered"]
+[connection signal="body_exited" from="Mum" to="." method="_on_Mum_body_exited"]
 
 [editable path="RobotPlayer"]

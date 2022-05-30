@@ -6,7 +6,9 @@ signal received_answer
 var mumDone = false
 var mumNoMoreSpeak = false
 
-
+func _ready():
+	Inventory.canChangeLevel = false
+	Inventory.currentLevel = 2
 
 func _on_Mum_body_entered(body):
 	if not mumDone and body.get_groups().has("player"):
@@ -22,6 +24,13 @@ func _on_Mum_body_entered(body):
 		if Inventory.myInventory.has("book"):
 			mumNoMoreSpeak = true
 			_conversation("mumFoundBook", "roksanaMumFoundBook", true)
+		else:
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true
+		return
+	if body.get_groups().has("player"):
+		$RobotPlayer/iTime.visible = true
+		Inventory.canChangeLevel = true
 
 func _conversation(personA: String, personB: String, askFruits: bool):
 	$RobotPlayer.is_active = false
@@ -56,12 +65,15 @@ func _conversation(personA: String, personB: String, askFruits: bool):
 		$RobotPlayer/Speaker.text = "Mum"
 		$RobotPlayer/MainSpokenText.text ="Should I bring these fruits with me?"
 		$RobotPlayer/Buttons.visible = true
+		mumNoMoreSpeak = true
 		yield (self, "received_answer")
 	
 	$RobotPlayer/MainSpokenText.text = ""
 	$RobotPlayer/MainSpokenText.visible = false
 	$RobotPlayer/Speaker.visible = false
 	$RobotPlayer.is_active = true
+	$RobotPlayer/iTime.visible = true
+	Inventory.canChangeLevel = true
 
 
 func _input(_event):
@@ -81,3 +93,8 @@ func _on_NoButton_pressed():
 	$RobotPlayer/Buttons.visible = false
 	yield (self, "continue_conversation")
 	emit_signal("received_answer")
+
+
+func _on_Mum_body_exited(body):
+	$RobotPlayer/iTime.visible = false
+	Inventory.canChangeLevel = false

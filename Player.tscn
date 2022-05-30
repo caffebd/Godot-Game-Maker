@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/robot/character_robot_attack2.png" type="Texture" id=1]
 [ext_resource path="res://assets/girl/walk/1.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/girl/walk/7.png" type="Texture" id=4]
 [ext_resource path="res://assets/girl/walk/2.png" type="Texture" id=5]
 [ext_resource path="res://assets/robot/character_robot_attack1.png" type="Texture" id=6]
+[ext_resource path="res://assets/objects/itime15.png" type="Texture" id=7]
 [ext_resource path="res://assets/robot/character_robot_attack0.png" type="Texture" id=8]
 [ext_resource path="res://assets/girl/walk/6.png" type="Texture" id=9]
 [ext_resource path="res://assets/girl/walk/3.png" type="Texture" id=10]
@@ -195,6 +196,12 @@ margin_top = -47.0
 margin_right = 42.0
 margin_bottom = -27.0
 text = "NO"
+
+[node name="iTime" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -26 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 7 )
 
 [connection signal="player_hit" from="." to="." method="_on_RobotPlayer_player_hit"]
 [connection signal="timeout" from="PlayerCam/Timer" to="PlayerCam" method="_on_Timer_timeout"]
