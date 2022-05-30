@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 var gravity = 400.0
-const WALK_SPEED = 200
-const JUMP_FORCE = 350
+const WALK_SPEED = 100
+const JUMP_FORCE = 250
 
 signal player_hit
 
@@ -215,13 +215,32 @@ func update_inventory():
 	inventory_items.clear()
 	for item in Inventory.myInventory:
 		match item:
+			"fruit":
+				$InventorySystem/ItemList.add_icon_item(Inventory.theFruit)			
 			"key":
 				$InventorySystem/ItemList.add_icon_item(Inventory.theKey)				
 			"grass":
 				$InventorySystem/ItemList.add_icon_item(Inventory.theGrass)
 			"iTime15":
 				$InventorySystem/ItemList.add_icon_item(Inventory.iTime15)
-		
+
+
+func drop_item(item: String, index: int):
+	match item:
+		"fruit":
+			var loadItem = preload("res://Levels/Level2/Fruit.tscn")	
+			var itemInstance = loadItem.instance()
+			var newPos = Vector2.ZERO
+			newPos.x = position.x + 24
+			newPos.y = position.y + 12
+			if $AnimatedSprite.flip_h:
+				newPos.x -= 48
+			
+			itemInstance.position = newPos
+			get_parent().add_child(itemInstance)
+			Inventory.myInventory.remove(index)
+			update_inventory()
+
 
 func show_player_info_box(msg: String):
 	$PlayerCam/InfoBox.text = msg

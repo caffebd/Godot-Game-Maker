@@ -9,9 +9,9 @@
 [ext_resource path="res://Levels/Level1/Doctor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Levels/Level1/Home.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Level1/Scientist.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Village.png" type="Texture" id=10]
+[ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Sky.png" type="Texture" id=10]
 [ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Trees.png" type="Texture" id=11]
-[ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Foreground (1).png" type="Texture" id=12]
+[ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Foreground.png" type="Texture" id=12]
 [ext_resource path="res://assets/Bangladesh Objects/bangladeshBackground/Clouds.png" type="Texture" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -46,42 +46,41 @@ script = ExtResource( 4 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 960, 0 )
+motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 10 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-motion_scale = Vector2( 0.4, 1 )
-motion_mirroring = Vector2( 960, 0 )
+motion_scale = Vector2( 0.1, 0.05 )
+motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 texture = ExtResource( 13 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( 0, -164 )
-motion_scale = Vector2( 0.8, 1 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( -84, 67 )
+position = Vector2( 0, 67 )
 texture = ExtResource( 11 )
 
 [node name="Shop" parent="." instance=ExtResource( 3 )]
-position = Vector2( 340, -239 )
+position = Vector2( 293, 649 )
 
 [node name="Farmer" parent="." instance=ExtResource( 5 )]
-position = Vector2( 824, -179 )
+position = Vector2( 777, 709 )
 
 [node name="Fisherman" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1535, 226 )
+position = Vector2( 1488, 1114 )
 
 [node name="Doctor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2082, -172 )
+position = Vector2( 2035, 716 )
 
 [node name="Home" parent="." instance=ExtResource( 8 )]
-position = Vector2( 2755, -154 )
+position = Vector2( 2708, 734 )
 
 [node name="BangladeshTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -101,7 +100,7 @@ layer = 100
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground2"]
 visible = false
 position = Vector2( -2, 42 )
-motion_mirroring = Vector2( 960, 0 )
+motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer4"]
 texture = ExtResource( 12 )

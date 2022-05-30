@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Clouds.png-41dda14c37535c7db4f4c7e35622960f.stex"
+path="res://.import/8.png-b45f7c68b1bc54b9040bbd314ed76456.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bangladesh Objects/bangladeshBackground/Clouds.png"
-dest_files=[ "res://.import/Clouds.png-41dda14c37535c7db4f4c7e35622960f.stex" ]
+source_file="res://assets/girl/walk/8.png"
+dest_files=[ "res://.import/8.png-b45f7c68b1bc54b9040bbd314ed76456.stex" ]
 
 [params]
 

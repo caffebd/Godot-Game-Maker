@@ -9,6 +9,7 @@ var myInventory: Array = []
 
 var current_action_object
 
+var theFruit = load("res://assets/Dinosaur Objects/fruit_sample.png")
 var theKey = load("res://assets/objects/key.png")
 var theGrass = load("res://assets/objects/grass.png")
 var iTime15 = load("res://assets/objects/itime15.png")

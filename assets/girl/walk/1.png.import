@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Foreground (1).png-255e5a43bc5067e9ee89cc4685f26a6e.stex"
+path="res://.import/1.png-3f7f613174cf7c9dbcd36fb70bb13a3c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bangladesh Objects/bangladeshBackground/Foreground (1).png"
-dest_files=[ "res://.import/Foreground (1).png-255e5a43bc5067e9ee89cc4685f26a6e.stex" ]
+source_file="res://assets/girl/walk/1.png"
+dest_files=[ "res://.import/1.png-3f7f613174cf7c9dbcd36fb70bb13a3c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

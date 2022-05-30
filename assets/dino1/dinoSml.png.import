@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Clouds.png-41dda14c37535c7db4f4c7e35622960f.stex"
+path="res://.import/dinoSml.png-e0728bb52be3d90cf3d365d9e0e3d13f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bangladesh Objects/bangladeshBackground/Clouds.png"
-dest_files=[ "res://.import/Clouds.png-41dda14c37535c7db4f4c7e35622960f.stex" ]
+source_file="res://assets/dino1/dinoSml.png"
+dest_files=[ "res://.import/dinoSml.png-e0728bb52be3d90cf3d365d9e0e3d13f.stex" ]
 
 [params]
 
