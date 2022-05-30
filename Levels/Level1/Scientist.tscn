@@ -5,16 +5,17 @@
 [ext_resource path="res://assets/objects/itime15.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.5, 397 )
+extents = Vector2( 30.5, 164.5 )
 
 [node name="Scientist" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -782, -348 )
+position = Vector2( -593, -141 )
 shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]

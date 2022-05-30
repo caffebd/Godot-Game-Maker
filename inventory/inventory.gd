@@ -2,7 +2,7 @@ extends Node
 
 var currentLevel = 0
 
-var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/LevelTest.tscn", "res://Levels/Level3/Level3.tscn"]
+var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/LevelTest.tscn", "res://Levels/BangladeshNow.tscn"]
 var canChangeLevel = false
 
 var myInventory: Array = []
