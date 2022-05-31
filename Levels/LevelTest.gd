@@ -150,4 +150,13 @@ func _on_Monkey_body_exited(body):
 		$RobotPlayer/Speaker.visible = false
 		$RobotPlayer/MainSpokenText.visible = false
 		$RobotPlayer/Buttons.visible = false
-		
+
+func lost_stick():
+	$RobotPlayer/Speaker.text = "Roksana"
+	$RobotPlayer/Speaker.visible = true
+	$RobotPlayer/MainSpokenText.text ="Oops, I dropped the stick!"
+	$RobotPlayer/MainSpokenText.visible = true	
+	yield (self, "continue_conversation")
+	$RobotPlayer/MainSpokenText.visible = false
+	$RobotPlayer/Speaker.visible = false
+	$RobotPlayer.canMove = true

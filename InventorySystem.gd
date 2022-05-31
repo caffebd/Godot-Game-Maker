@@ -12,8 +12,11 @@ func _on_ItemList_item_selected(index):
 			var loadLevel = Inventory.levels[Inventory.currentLevel]
 			var _nextScene = get_tree().change_scene(loadLevel)
 		return
-	
-	get_parent().drop_item(Inventory.myInventory[index], index)
+		
+	if Inventory.current_action_object != null:
+		Inventory.current_action_object.check_action(Inventory.myInventory[index], index)	
+	else:	
+		get_parent().drop_item(Inventory.myInventory[index], index)
 	
 #	if Inventory.current_action_object != null:
 #		Inventory.current_action_object.check_action(Inventory.myInventory[index], index)

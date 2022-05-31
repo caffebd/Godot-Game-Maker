@@ -16,6 +16,8 @@ var canFly: bool = false
 
 var invisible: bool = false
 
+var canMove = true
+
 var is_attacking:bool = false
 var myDirection: int = 1
 
@@ -43,14 +45,14 @@ func _physics_process(delta):
 		return
 	
 	if not is_attacking:
-		if Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_left") and canMove:
 			velocity.x = -WALK_SPEED
 			myDirection = -1
 			$AnimatedSprite.flip_h = velocity.x < 0
 			if is_on_floor():
 				$AnimatedSprite.animation = "walk"		
 				$AnimatedSprite.play()
-		elif Input.is_action_pressed("move_right"):
+		elif Input.is_action_pressed("move_right") and canMove:
 			velocity.x =  WALK_SPEED
 			myDirection = 1
 			$AnimatedSprite.flip_h = velocity.x < 0
@@ -58,7 +60,8 @@ func _physics_process(delta):
 				$AnimatedSprite.animation = "walk"	
 				$AnimatedSprite.play()
 		else:
-			velocity.x = 0
+			if canMove:
+				velocity.x = 0
 			
 
 
@@ -66,7 +69,7 @@ func _physics_process(delta):
 	if not onLadder:
 		gravity = 400
 	# Check for jumping. is_on_floor() must be called after movement code.
-		if not canFly and is_on_floor() and Input.is_action_just_pressed("jump"):
+		if not canFly and is_on_floor() and Input.is_action_just_pressed("jump") and canMove:
 			velocity.y = -JUMP_FORCE
 		
 		if canFly and Input.is_action_pressed("jump"):
@@ -77,7 +80,7 @@ func _physics_process(delta):
 			$AnimatedSprite.play()
 	else:
 		gravity = 0
-		if Input.is_action_pressed("jump"):
+		if Input.is_action_pressed("jump") and canMove:
 			velocity.y = -WALK_SPEED
 			$AnimatedSprite.animation = "climb"	
 			$AnimatedSprite.play()
@@ -215,6 +218,8 @@ func update_inventory():
 	inventory_items.clear()
 	for item in Inventory.myInventory:
 		match item:
+			"stick":
+				$InventorySystem/ItemList.add_icon_item(Inventory.theStick)				
 			"fruit":
 				$InventorySystem/ItemList.add_icon_item(Inventory.theFruit)			
 			"book":
@@ -235,6 +240,9 @@ func drop_item(item: String, index: int):
 		"book":
 			var loadItem = preload("res://Levels/Level3/Book.tscn")	
 			create_dropped_item(loadItem, index)
+		"stick":
+			var loadItem = preload("res://Levels/Level2/Stick.tscn")	
+			create_dropped_item(loadItem, index)			
 
 func create_dropped_item(loadItem, index):
 	var itemInstance = loadItem.instance()
@@ -267,3 +275,7 @@ func _on_Ladders_body_entered(body):
 func _on_Ladders_body_exited(body):
 	if body.get_groups().has("player"):
 		onLadder = false
+		
+
+func lost_stick():
+	pass

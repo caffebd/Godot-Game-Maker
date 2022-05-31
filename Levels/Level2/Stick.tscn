@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/Level2/Stick.gd" type="Script" id=1]
+[ext_resource path="res://assets/Forest Objects/stick.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 44.5, 10 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.705882 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[node name="Stick" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 0.797615
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -11.0
+margin_top = -32.0
+margin_right = 12.0
+margin_bottom = -18.0
+custom_styles/normal = SubResource( 2 )
+text = "'e'"
+align = 1
+valign = 1
+
+[connection signal="body_entered" from="." to="." method="_on_Stick_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Stick_body_exited"]
