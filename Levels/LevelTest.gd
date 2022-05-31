@@ -160,3 +160,12 @@ func lost_stick():
 	$RobotPlayer/MainSpokenText.visible = false
 	$RobotPlayer/Speaker.visible = false
 	$RobotPlayer.canMove = true
+
+func broke_stick():
+	$RobotPlayer/Speaker.text = "Roksana"
+	$RobotPlayer/Speaker.visible = true
+	$RobotPlayer/MainSpokenText.text ="Oops, I broke the stick!"
+	$RobotPlayer/MainSpokenText.visible = true	
+	yield (self, "continue_conversation")
+	$RobotPlayer/MainSpokenText.visible = false
+	$RobotPlayer/Speaker.visible = false

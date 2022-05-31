@@ -277,5 +277,3 @@ func _on_Ladders_body_exited(body):
 		onLadder = false
 		
 
-func lost_stick():
-	pass
