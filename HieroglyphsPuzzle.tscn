@@ -1,0 +1,222 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/Egypt/fisher.png" type="Texture" id=1]
+[ext_resource path="res://assets/Egypt/doctor.png" type="Texture" id=2]
+[ext_resource path="res://assets/Egypt/store.png" type="Texture" id=3]
+[ext_resource path="res://assets/Egypt/farm.png" type="Texture" id=4]
+[ext_resource path="res://HieroglyphsPuzzle.gd" type="Script" id=5]
+[ext_resource path="res://assets/audio/DESTRUCTION Rumbling Debris 09.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/audio/SLIDER Swipe Drag Movement Stone Short 03.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/IMPACT Thump Thud 01.wav" type="AudioStream" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "notpressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 19.5, 12.5 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.784314 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 0.917647, 0.0196078, 1 )
+border_blend = true
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "notpressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 18, 10 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "notpressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 18.25, 10 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "notpressed",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "pressed",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 18, 10 )
+
+[node name="HieroglyphsPuzzle" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Button1" type="Button" parent="."]
+margin_left = -136.0
+margin_top = -24.0
+margin_right = -86.0
+margin_bottom = 26.0
+
+[node name="Farm" type="AnimatedSprite" parent="Button1"]
+position = Vector2( 25, 24 )
+frames = SubResource( 1 )
+animation = "notpressed"
+
+[node name="FarmArea2D" type="Area2D" parent="Button1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button1/FarmArea2D"]
+position = Vector2( 23.5, 70.5 )
+shape = SubResource( 6 )
+
+[node name="Label" type="Label" parent="Button1/FarmArea2D"]
+visible = false
+margin_left = 4.0
+margin_top = -24.0
+margin_right = 44.0
+margin_bottom = -8.0
+custom_styles/normal = SubResource( 5 )
+text = "'e'"
+align = 1
+valign = 1
+
+[node name="Button2" type="Button" parent="."]
+margin_left = -60.0
+margin_top = -23.0
+margin_right = -10.0
+margin_bottom = 27.0
+
+[node name="Doctor" type="AnimatedSprite" parent="Button2"]
+position = Vector2( 26, 24 )
+frames = SubResource( 2 )
+animation = "notpressed"
+
+[node name="DoctorArea2D" type="Area2D" parent="Button2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button2/DoctorArea2D"]
+position = Vector2( 26, 70 )
+shape = SubResource( 7 )
+
+[node name="Label2" type="Label" parent="Button2/DoctorArea2D"]
+visible = false
+margin_left = 5.0
+margin_top = -24.0
+margin_right = 45.0
+margin_bottom = -8.0
+custom_styles/normal = SubResource( 5 )
+text = "'e'"
+align = 1
+valign = 1
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 19.0
+margin_top = -23.0
+margin_right = 69.0
+margin_bottom = 27.0
+
+[node name="Store" type="AnimatedSprite" parent="Button3"]
+position = Vector2( 25, 24 )
+frames = SubResource( 3 )
+animation = "notpressed"
+
+[node name="StoreArea2D" type="Area2D" parent="Button3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button3/StoreArea2D"]
+position = Vector2( 25, 70 )
+shape = SubResource( 8 )
+
+[node name="Label3" type="Label" parent="Button3/StoreArea2D"]
+visible = false
+margin_left = 4.0
+margin_top = -25.0
+margin_right = 44.0
+margin_bottom = -9.0
+custom_styles/normal = SubResource( 5 )
+text = "'e'"
+align = 1
+valign = 1
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 95.0
+margin_top = -23.0
+margin_right = 145.0
+margin_bottom = 27.0
+
+[node name="Fisherman" type="AnimatedSprite" parent="Button4"]
+position = Vector2( 25, 24 )
+frames = SubResource( 4 )
+animation = "notpressed"
+
+[node name="FisherArea2D" type="Area2D" parent="Button4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button4/FisherArea2D"]
+position = Vector2( 26, 70 )
+shape = SubResource( 9 )
+
+[node name="Label4" type="Label" parent="Button4/FisherArea2D"]
+visible = false
+margin_left = 5.0
+margin_top = -25.0
+margin_right = 45.0
+margin_bottom = -9.0
+custom_styles/normal = SubResource( 5 )
+text = "'e'"
+align = 1
+valign = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+
+[node name="PushAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+pitch_scale = 0.55
+
+[node name="ResetAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
+[connection signal="body_entered" from="Button1/FarmArea2D" to="." method="_on_FarmArea2D_body_entered"]
+[connection signal="body_exited" from="Button1/FarmArea2D" to="." method="_on_FarmArea2D_body_exited"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="body_entered" from="Button2/DoctorArea2D" to="." method="_on_DoctorArea2D_body_entered"]
+[connection signal="body_exited" from="Button2/DoctorArea2D" to="." method="_on_DoctorArea2D_body_exited"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="body_entered" from="Button3/StoreArea2D" to="." method="_on_StoreArea2D_body_entered"]
+[connection signal="body_exited" from="Button3/StoreArea2D" to="." method="_on_StoreArea2D_body_exited"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="body_entered" from="Button4/FisherArea2D" to="." method="_on_FisherArea2D_body_entered"]
+[connection signal="body_exited" from="Button4/FisherArea2D" to="." method="_on_FisherArea2D_body_exited"]
+[connection signal="finished" from="PushAudio" to="." method="_on_PushAudio_finished"]
