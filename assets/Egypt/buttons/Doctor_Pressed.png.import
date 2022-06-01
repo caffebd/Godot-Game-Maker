@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1_Big_Block.png-3d180c476b29e43cd3a21ddea8fadbc9.stex"
+path="res://.import/Doctor_Pressed.png-f84ea612b6468aafc8df9aad292c63eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles-pixel/Egypt/1_Big_Block.png"
-dest_files=[ "res://.import/1_Big_Block.png-3d180c476b29e43cd3a21ddea8fadbc9.stex" ]
+source_file="res://assets/Egypt/buttons/Doctor_Pressed.png"
+dest_files=[ "res://.import/Doctor_Pressed.png-f84ea612b6468aafc8df9aad292c63eb.stex" ]
 
 [params]
 

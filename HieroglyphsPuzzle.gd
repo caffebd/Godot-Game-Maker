@@ -65,7 +65,7 @@ func _on_Button3_pressed():
 		reset_button()
 	else:
 		$PushAudio.play()
-		$Button3/Store.play("pressed")
+		$Button3/Store.animation = "pressed"
 		selected.push_back("store")
 #		check_answer()
 

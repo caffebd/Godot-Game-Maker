@@ -14,7 +14,8 @@ func _ready():
 
 func _process(delta):
 	offset = Vector2(rand_range(-shake_amount, shake_amount), rand_range(-shake_amount, shake_amount)) * delta + default_offset
-
+	position = position.round()
+	force_update_scroll()
 
 func shake(new_shake, shake_time=0.4, shake_limit=500):
 	shake_amount += new_shake
