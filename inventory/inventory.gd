@@ -4,6 +4,8 @@ var currentLevel = 0
 
 var plantsSquashed = 0
 
+var tissues_collected = 0
+
 var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/LevelTest.tscn", "res://Levels/BangladeshNow.tscn"]
 var canChangeLevel = false
 

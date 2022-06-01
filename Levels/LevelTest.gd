@@ -7,6 +7,10 @@ var mumDone = false
 var mumNoMoreSpeak = false
 var monkeyDone = false
 
+var dadDone = false
+var dadNoMoreSpeak = false
+
+
 var mumQuestion = false
 var monkeyQuestion = false
 
@@ -35,6 +39,45 @@ func _on_Mum_body_entered(body):
 	if body.get_groups().has("player"):
 		$RobotPlayer/iTime.visible = true
 		Inventory.canChangeLevel = true
+
+		
+		
+func _conversation_l2(personA: String, personB: String, askFruits: bool):
+	$RobotPlayer.is_active = false
+	$RobotPlayer/MainSpokenText.visible = true
+	$RobotPlayer/Speaker.visible = true
+
+	var partA = Level2SpokenText.people[personA]
+	var partB = []
+	if personB != "":
+		partB = Level2SpokenText.people[personB]
+
+	for i in partA.size():
+		var speaker = personA
+		print (speaker)
+		if "roksana" in speaker:
+			speaker = "Roksana"
+		if "dad" in speaker:
+			speaker = "Dad"
+		$RobotPlayer/Speaker.text = speaker
+		$RobotPlayer/MainSpokenText.text = partA[i]
+		yield (self, "continue_conversation")		
+		if partB.size() > 0 and i <= partB.size()-1:
+			speaker = personB
+			if "roksana" in speaker:
+				speaker = "Roksana"
+			if "dad" in speaker:
+				speaker = "Dad"
+			$RobotPlayer/Speaker.text = speaker
+			$RobotPlayer/MainSpokenText.text = partB[i]
+			yield (self, "continue_conversation")
+			
+	$RobotPlayer/MainSpokenText.text = ""
+	$RobotPlayer/MainSpokenText.visible = false
+	$RobotPlayer/Speaker.visible = false
+	$RobotPlayer.is_active = true
+	$RobotPlayer/iTime.visible = true
+	Inventory.canChangeLevel = true
 
 func _conversation(personA: String, personB: String, askFruits: bool):
 	$RobotPlayer.is_active = false
@@ -169,3 +212,33 @@ func broke_stick():
 	yield (self, "continue_conversation")
 	$RobotPlayer/MainSpokenText.visible = false
 	$RobotPlayer/Speaker.visible = false
+
+
+func _on_Dad_body_entered(body):
+	if not dadDone and body.get_groups().has("player"):
+		dadDone = true
+		dadNoMoreSpeak = true
+		if Inventory.tissues_collected == 10:
+			_conversation_l2("dadTissues", "roksanaDadTissues", true)
+		else:
+			dadDone = true
+			_conversation_l2("dadNoTissues", "roksanaDadNoTissues", false)
+		return
+	
+	if dadDone and not dadNoMoreSpeak and body.get_groups().has("player"):
+		if Inventory.tissues_collected == 10:
+			dadNoMoreSpeak = true
+			_conversation_l2("roksanaFoundAllTissues", "dadFoundAllTissues", true)
+		else:
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true
+		return
+	if body.get_groups().has("player"):
+		$RobotPlayer/iTime.visible = true
+		Inventory.canChangeLevel = true
+
+
+func _on_Dad_body_exited(body):
+	if body.get_groups().has("player"):
+		$RobotPlayer/iTime.visible = false
+		Inventory.canChangeLevel = false

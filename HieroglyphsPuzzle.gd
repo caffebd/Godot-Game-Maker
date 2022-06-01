@@ -82,7 +82,7 @@ func _on_Button4_pressed():
 		selected.push_back("fisherman")
 #		check_answer()
 		
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("collect"):
 		match current_button:
 			"farm":
@@ -147,6 +147,7 @@ func _on_FisherArea2D_body_entered(body):
 
 
 func _on_FisherArea2D_body_exited(body):
+	if body.get_groups().has("player"):
 		$Button4/FisherArea2D/Label4.visible=false
 		current_button = ""
 

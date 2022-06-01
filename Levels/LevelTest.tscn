@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://assets/tiles-pixel/grass-tile.png" type="Texture" id=1]
 [ext_resource path="res://assets/tiles-pixel/tileYellow_04.png" type="Texture" id=2]
@@ -34,6 +34,7 @@
 [ext_resource path="res://assets/tiles-pixel/Egypt/12_Bottom_Left_Block.png" type="Texture" id=32]
 [ext_resource path="res://HieroglyphsPuzzle.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Levels/Level2/SolidWall.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Levels/Level2/Dad.tscn" type="PackedScene" id=35]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -481,7 +482,7 @@ motion_mirroring = Vector2( 1920, 1080 )
 texture = ExtResource( 7 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -525, 75 )
+position = Vector2( -115, 68 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )
@@ -599,6 +600,10 @@ position = Vector2( -152, -696 )
 [node name="SolidWall" parent="." instance=ExtResource( 34 )]
 position = Vector2( -552, 40 )
 
+[node name="Dad" parent="." instance=ExtResource( 35 )]
+position = Vector2( 64, 75 )
+scale = Vector2( -1, 1 )
+
 [connection signal="pressed" from="RobotPlayer/Buttons/YesButton" to="." method="_on_YesButton_pressed"]
 [connection signal="pressed" from="RobotPlayer/Buttons/NoButton" to="." method="_on_NoButton_pressed"]
 [connection signal="body_entered" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_entered"]
@@ -608,5 +613,7 @@ position = Vector2( -552, 40 )
 [connection signal="body_entered" from="Monkey" to="." method="_on_Monkey_body_entered"]
 [connection signal="body_exited" from="Monkey" to="." method="_on_Monkey_body_exited"]
 [connection signal="log_fall" from="Vine" to="Log" method="_on_Vine_log_fall"]
+[connection signal="body_entered" from="Dad" to="." method="_on_Dad_body_entered"]
+[connection signal="body_exited" from="Dad" to="." method="_on_Dad_body_exited"]
 
 [editable path="RobotPlayer"]

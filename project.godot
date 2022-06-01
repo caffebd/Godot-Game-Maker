@@ -29,6 +29,7 @@ config/icon="res://icon.png"
 Inventory="*res://inventory/inventory.gd"
 Level1SpokenText="*res://SpokenTexts/Level1SpokenText.gd"
 Level3SpokenText="*res://SpokenTexts/Level3SpokenText.gd"
+Level2SpokenText="*res://SpokenTexts/Level2SpokenText.gd"
 
 [display]
 
