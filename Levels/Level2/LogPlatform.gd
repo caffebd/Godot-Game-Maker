@@ -25,6 +25,14 @@ func _ready():
 	if direction_forward:
 		$Base/Block1/BlockRight.disabled = false
 		$Base/Block2/BlockLeft.disabled = true
+		$StaticBody2D/RightBank.disabled = false
+		$StaticBody2D2/LeftBank.disabled = true
+	else:
+		$Base/Block1/BlockRight.disabled = true
+		$Base/Block2/BlockLeft.disabled = false
+		$StaticBody2D/RightBank.disabled = true
+		$StaticBody2D2/LeftBank.disabled = false
+			
 
 func _process(_delta):
 	if Engine.is_editor_hint():
@@ -64,9 +72,14 @@ func _on_Tween_tween_completed(_object, _key):
 	if direction_forward:
 		$Base/Block1/BlockRight.disabled = false
 		$Base/Block2/BlockLeft.disabled = true
+		$StaticBody2D/RightBank.disabled = false
+		$StaticBody2D2/LeftBank.disabled = true		
+		
 	else:
 		$Base/Block1/BlockRight.disabled = true
 		$Base/Block2/BlockLeft.disabled = false
+		$StaticBody2D/RightBank.disabled = true
+		$StaticBody2D2/LeftBank.disabled = false		
 
 	
 	

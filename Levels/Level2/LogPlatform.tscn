@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Level2/LogPlatform.gd" type="Script" id=1]
 [ext_resource path="res://assets/Forest Objects/logBoat.png" type="Texture" id=2]
@@ -13,6 +13,9 @@ extents = Vector2( 16, 10 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 36.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2.5, 39.5 )
 
 [node name="LogBoat" type="Node2D"]
 script = ExtResource( 1 )
@@ -59,6 +62,18 @@ shape = SubResource( 3 )
 [node name="BlockLeft" type="CollisionShape2D" parent="Base/Block2"]
 position = Vector2( -30, -40 )
 shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RightBank" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 102.5, -35.5 )
+shape = SubResource( 4 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="LeftBank" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -116, -36 )
+shape = SubResource( 4 )
 
 [connection signal="tween_completed" from="Base/Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="body_entered" from="Base/OnLog" to="." method="_on_OnLog_body_entered"]
