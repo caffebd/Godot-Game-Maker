@@ -7,10 +7,12 @@ var playerNear = false
 
 
 func _input(_event):
-	if playerNear and Input.is_action_just_pressed("collect"):
-		Inventory.add_to_inventory("stick")
-		player.update_inventory()
-		queue_free()
+	if Input.is_action_just_pressed("collect"):
+		if playerNear:
+			playerNear = false		
+			Inventory.add_to_inventory("stick")
+			player.update_inventory()
+			queue_free()
 
 
 

@@ -1,5 +1,7 @@
 extends Node
 
+var music_on = true
+
 var currentLevel = 0
 
 var plantsSquashed = 0
@@ -19,7 +21,7 @@ var theStick = load ("res://assets/Forest Objects/stick.png")
 var theKey = load("res://assets/objects/key.png")
 var theGrass = load("res://assets/objects/grass.png")
 var iTime15 = load("res://assets/objects/itime15.png")
-
+var thePhoto = load("res://assets/Bangladesh Objects/housetemp.jpeg")
 
 func _ready():
 	print ("Inv system autolad")

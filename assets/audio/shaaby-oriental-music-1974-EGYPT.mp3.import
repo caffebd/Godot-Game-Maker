@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/shaaby-oriental-music-1974-EGYPT.mp3-0edebb7bcaa37202f9f699517aded14c.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/shaaby-oriental-music-1974-EGYPT.mp3"
+dest_files=[ "res://.import/shaaby-oriental-music-1974-EGYPT.mp3-0edebb7bcaa37202f9f699517aded14c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

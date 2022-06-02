@@ -13,7 +13,7 @@ onready var tween: Tween = $Base/Tween
 
 
 
-var direction_forward = true
+export var direction_forward = true
 
 var audioPlaying: bool = false
 
@@ -22,6 +22,9 @@ onready var player = get_node("../RobotPlayer")
 func _ready():
 	if not Engine.is_editor_hint():
 		set_tween(move_from, move_to)
+	if direction_forward:
+		$Base/Block1/BlockRight.disabled = false
+		$Base/Block2/BlockLeft.disabled = true
 
 func _process(_delta):
 	if Engine.is_editor_hint():
@@ -48,14 +51,22 @@ func set_tween(from, to):
 		if not $Base/PlatformSound.playing:
 			$Base/PlatformSound.play()
 	else:
-		if  $Base/PlatformSound.playing:
+		if $Base/PlatformSound.playing:
 			$Base/PlatformSound.stop()
 
 
 func _on_Tween_tween_completed(_object, _key):
+	if $Base/PlatformSound.playing:
+		$Base/PlatformSound.stop()
 	get_parent().lost_stick()
 	active = false
 	direction_forward = !direction_forward
+	if direction_forward:
+		$Base/Block1/BlockRight.disabled = false
+		$Base/Block2/BlockLeft.disabled = true
+	else:
+		$Base/Block1/BlockRight.disabled = true
+		$Base/Block2/BlockLeft.disabled = false
 
 	
 	

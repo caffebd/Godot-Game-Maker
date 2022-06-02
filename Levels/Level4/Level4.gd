@@ -3,6 +3,7 @@ extends Node2D
 signal continue_conversation
 signal received_answer
 
+
 var mumDone = false
 var mumNoMoreSpeak = false
 var monkeyDone = false
@@ -10,13 +11,18 @@ var monkeyDone = false
 var dadDone = false
 var dadNoMoreSpeak = false
 
+var boyDone = false
+var boyNoMoreSpeak = false
+
 
 var mumQuestion = false
 var monkeyQuestion = false
 
 func _ready():
 	Inventory.canChangeLevel = false
-	Inventory.currentLevel = 2
+	Inventory.currentLevel = 4
+	if Inventory.music_on:
+		$BackgroundMusic.play()
 
 func _on_Mum_body_entered(body):
 	if not mumDone and body.get_groups().has("player"):
@@ -79,6 +85,44 @@ func _conversation_l2(personA: String, personB: String, askFruits: bool):
 	$RobotPlayer/iTime.visible = true
 	Inventory.canChangeLevel = true
 
+func _conversation_l4(personA: String, personB: String, askFruits: bool):
+	$RobotPlayer.is_active = false
+	$RobotPlayer/MainSpokenText.visible = true
+	$RobotPlayer/Speaker.visible = true
+
+	var partA = Level4SpokenText.people[personA]
+	var partB = []
+	if personB != "":
+		partB = Level4SpokenText.people[personB]
+
+	for i in partA.size():
+		var speaker = personA
+		print (speaker)
+		if "roksana" in speaker:
+			speaker = "Roksana"
+		if "kobir" in speaker:
+			speaker = "Kobir"
+		$RobotPlayer/Speaker.text = speaker
+		$RobotPlayer/MainSpokenText.text = partA[i]
+		yield (self, "continue_conversation")		
+		if partB.size() > 0 and i <= partB.size()-1:
+			speaker = personB
+			if "roksana" in speaker:
+				speaker = "Roksana"
+			if "kobir" in speaker:
+				speaker = "Kobir"
+			$RobotPlayer/Speaker.text = speaker
+			$RobotPlayer/MainSpokenText.text = partB[i]
+			yield (self, "continue_conversation")
+			
+	$RobotPlayer/MainSpokenText.text = ""
+	$RobotPlayer/MainSpokenText.visible = false
+	$RobotPlayer/Speaker.visible = false
+	$RobotPlayer.is_active = true
+	$RobotPlayer/iTime.visible = true
+	Inventory.canChangeLevel = true
+	
+	
 func _conversation(personA: String, personB: String, askFruits: bool):
 	$RobotPlayer.is_active = false
 	$RobotPlayer/MainSpokenText.visible = true
@@ -199,17 +243,18 @@ func lost_stick():
 	$RobotPlayer/Speaker.visible = true
 	$RobotPlayer/MainSpokenText.text ="Oops, I dropped the stick!"
 	$RobotPlayer/MainSpokenText.visible = true	
-	yield (self, "continue_conversation")
+	$RobotPlayer.canMove = true
+	yield(get_tree().create_timer(3.0), "timeout")
 	$RobotPlayer/MainSpokenText.visible = false
 	$RobotPlayer/Speaker.visible = false
-	$RobotPlayer.canMove = true
+	
 
 func broke_stick():
 	$RobotPlayer/Speaker.text = "Roksana"
 	$RobotPlayer/Speaker.visible = true
 	$RobotPlayer/MainSpokenText.text ="Oops, I broke the stick!"
 	$RobotPlayer/MainSpokenText.visible = true	
-	yield (self, "continue_conversation")
+	yield(get_tree().create_timer(3.0), "timeout")
 	$RobotPlayer/MainSpokenText.visible = false
 	$RobotPlayer/Speaker.visible = false
 
@@ -217,8 +262,9 @@ func broke_stick():
 func _on_Dad_body_entered(body):
 	if not dadDone and body.get_groups().has("player"):
 		dadDone = true
-		dadNoMoreSpeak = true
+		
 		if Inventory.tissues_collected == 10:
+			dadNoMoreSpeak = true
 			_conversation_l2("dadTissues", "roksanaDadTissues", true)
 		else:
 			dadDone = true
@@ -239,6 +285,71 @@ func _on_Dad_body_entered(body):
 
 
 func _on_Dad_body_exited(body):
+	if body.get_groups().has("player"):
+		$RobotPlayer/iTime.visible = false
+		Inventory.canChangeLevel = false
+
+func symbol_hint():
+	$RobotPlayer/Speaker.text = "Roksana"
+	$RobotPlayer/Speaker.visible = true
+	$RobotPlayer/MainSpokenText.text ="Interesting symbol..."
+	$RobotPlayer/MainSpokenText.visible = true	
+	yield(get_tree().create_timer(3.0), "timeout")
+	$RobotPlayer/MainSpokenText.visible = false
+	$RobotPlayer/Speaker.visible = false
+
+func _on_FisherHint_body_entered(body):
+	if body.get_groups().has("player"):
+		symbol_hint()
+
+
+func _on_DoctorHint_body_entered(body):
+	if body.get_groups().has("player"):
+		symbol_hint()
+
+
+func _on_StoreHint_body_entered(body):
+	if body.get_groups().has("player"):
+		symbol_hint()
+
+
+func _on_FarmHint_body_entered(body):
+	if body.get_groups().has("player"):
+		symbol_hint()
+
+
+func _on_Boy_body_entered(body):
+	if not boyDone and body.get_groups().has("player"):
+		boyDone = true
+		
+		if Inventory.myInventory.has("photograph"):
+			boyNoMoreSpeak = true
+			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
+			$RobotPlayer.update_inventory()
+			_conversation_l4("kobirPhoto", "roksanaKobirPhoto", true)
+		else:
+			boyDone = true
+			_conversation_l4("kobirNoPhoto", "roksanaKobirNoPhoto", false)
+		return
+	
+	if boyDone and not boyNoMoreSpeak and body.get_groups().has("player"):
+		if Inventory.myInventory.has("photograph"):
+			boyNoMoreSpeak = true
+			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
+			$RobotPlayer.update_inventory()
+			_conversation_l4("roksanaFoundPhoto", "kobirFoundPhoto", true)
+		else:
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true
+		return
+	if body.get_groups().has("player"):
+		$RobotPlayer/iTime.visible = true
+		Inventory.canChangeLevel = true
+
+
+
+
+func _on_Boy_body_exited(body):
 	if body.get_groups().has("player"):
 		$RobotPlayer/iTime.visible = false
 		Inventory.canChangeLevel = false

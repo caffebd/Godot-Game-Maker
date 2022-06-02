@@ -230,6 +230,8 @@ func update_inventory():
 				$InventorySystem/ItemList.add_icon_item(Inventory.theGrass)
 			"iTime15":
 				$InventorySystem/ItemList.add_icon_item(Inventory.iTime15)
+			"photograph":
+				$InventorySystem/ItemList.add_icon_item(Inventory.thePhoto)				
 
 
 func drop_item(item: String, index: int):
@@ -243,6 +245,10 @@ func drop_item(item: String, index: int):
 		"stick":
 			var loadItem = preload("res://Levels/Level2/Stick.tscn")	
 			create_dropped_item(loadItem, index)			
+		"photograph":
+			var loadItem = preload("res://Levels/Level4/Photograph.tscn")	
+			create_dropped_item(loadItem, index)	
+
 
 func create_dropped_item(loadItem, index):
 	var itemInstance = loadItem.instance()
@@ -276,4 +282,5 @@ func _on_Ladders_body_exited(body):
 	if body.get_groups().has("player"):
 		onLadder = false
 		
+
 
