@@ -22,6 +22,7 @@ var theKey = load("res://assets/objects/key.png")
 var theGrass = load("res://assets/objects/grass.png")
 var iTime15 = load("res://assets/objects/itime15.png")
 var thePhoto = load("res://assets/Bangladesh Objects/housetemp.jpeg")
+var theGarlic = load("res://assets/Egypt/garlic.png")
 
 func _ready():
 	print ("Inv system autolad")

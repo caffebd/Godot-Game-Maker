@@ -232,7 +232,8 @@ func update_inventory():
 				$InventorySystem/ItemList.add_icon_item(Inventory.iTime15)
 			"photograph":
 				$InventorySystem/ItemList.add_icon_item(Inventory.thePhoto)				
-
+			"garlic":
+				$InventorySystem/ItemList.add_icon_item(Inventory.theGarlic)	
 
 func drop_item(item: String, index: int):
 	match item:
@@ -248,7 +249,9 @@ func drop_item(item: String, index: int):
 		"photograph":
 			var loadItem = preload("res://Levels/Level4/Photograph.tscn")	
 			create_dropped_item(loadItem, index)	
-
+		"garlic":
+			var loadItem = preload("res://Levels/Level4/Garlic.tscn")	
+			create_dropped_item(loadItem, index)
 
 func create_dropped_item(loadItem, index):
 	var itemInstance = loadItem.instance()

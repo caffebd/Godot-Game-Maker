@@ -21,6 +21,10 @@ var monkeyQuestion = false
 func _ready():
 	Inventory.canChangeLevel = false
 	Inventory.currentLevel = 4
+	#TEMP CODE FOR TEST
+	Inventory.add_to_inventory("iTime15")
+	$RobotPlayer.update_inventory()
+	#END TEMP CODE
 	if Inventory.music_on:
 		$BackgroundMusic.play()
 
@@ -292,7 +296,7 @@ func _on_Dad_body_exited(body):
 func symbol_hint():
 	$RobotPlayer/Speaker.text = "Roksana"
 	$RobotPlayer/Speaker.visible = true
-	$RobotPlayer/MainSpokenText.text ="Interesting symbol..."
+	$RobotPlayer/MainSpokenText.text ="Interesting symbol. I wish I'd brought my sketchbook."
 	$RobotPlayer/MainSpokenText.visible = true	
 	yield(get_tree().create_timer(3.0), "timeout")
 	$RobotPlayer/MainSpokenText.visible = false

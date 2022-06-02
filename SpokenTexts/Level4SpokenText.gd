@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-var roksanaTextKobirPhoto = ["Kobir!", "Don't worry, I'm taking you home.", "Yes, I thought it must have been yours. Here you go.", "Ready to go home?"]
+var roksanaTextKobirPhoto = ["Kobir!", "Don't worry, I'm taking you home.", "Yes, I thought it must have been yours. Here you go.", "Ready to go home?", "I don't think that's a good idea!"]
 var roksanaTextKobirNoPhoto = ["Kobir!", "Don't worry, I'm taking you home.", "What photograph?", "Hmmm... okay but we really should get out of here.", "Why is everyone in my family so bad at looking after their things?"]
 
 var kobirPhotoText = ["Roksana!", "I thought I was never going to get out. I was walking around and then I got trapped in here.", "Is that my photograph?", "Thank you", "Ummm.... I could stay a bit longer..."]
