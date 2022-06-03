@@ -6,6 +6,10 @@ var active = true
 
 export var duration = 1
 
+export(NodePath) var myLogPath
+
+onready var myLog = get_node(myLogPath)
+
 func move_down():
 	var target = Vector2.ZERO
 	target.x = position.x
@@ -15,7 +19,7 @@ func move_down():
 func set_tween(from, to):
 		var _moving = $Tween.interpolate_property(self, "position", from, to, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		var _moveStart = $Tween.start()
-		emit_signal("log_fall")
+		myLog.the_log_fall()
 
 
 func _input(_event):

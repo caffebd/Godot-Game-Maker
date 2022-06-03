@@ -689,12 +689,13 @@ tile_data = PoolIntArray( 65463, 31, 0, 65464, 32, 0, 65465, 32, 0, 65466, 32, 0
 follow_viewport_scale = 0.4
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( 35, -364 )
+z_index = -100
 motion_scale = Vector2( 0.4, 0.001 )
-motion_mirroring = Vector2( 1920, 1080 )
+motion_mirroring = Vector2( 960, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1, 2 )
 texture = ExtResource( 7 )
 
 [node name="HieroglyphsPuzzle" parent="." instance=ExtResource( 33 )]
@@ -702,7 +703,7 @@ position = Vector2( -448, 24 )
 node_path = NodePath("../SolidWall")
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -888, 96 )
+position = Vector2( 112, -608 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )

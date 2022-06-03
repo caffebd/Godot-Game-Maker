@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cha Da Cup Riddim - Konrad OldMoney.mp3-07b4b7c66430540b8abac470727ed975.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Cha Da Cup Riddim - Konrad OldMoney.mp3"
+dest_files=[ "res://.import/Cha Da Cup Riddim - Konrad OldMoney.mp3-07b4b7c66430540b8abac470727ed975.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

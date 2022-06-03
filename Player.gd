@@ -132,7 +132,7 @@ func _physics_process(delta):
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 
-	if position.y > startPosition.y + 1500:
+	if position.y > startPosition.y + 2500:
 		restart(false)
 
 
@@ -272,7 +272,8 @@ func show_player_info_box(msg: String):
 
 func hide_player_info_box():
 	$PlayerCam/InfoBox.visible = false
-	
+
+		
 
 
 func _on_Ladders_body_entered(body):

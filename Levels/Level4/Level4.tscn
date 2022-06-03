@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://assets/tiles-pixel/grass-tile.png" type="Texture" id=1]
 [ext_resource path="res://assets/tiles-pixel/tileYellow_04.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Levels/Level4/DoctorHint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level4/StoreHint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level4/FisherHint.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/forest/20736273.jpeg" type="Texture" id=7]
+[ext_resource path="res://assets/Egypt/Egypt_test2.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level4/FarmHint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Level4/Level4.gd" type="Script" id=9]
 [ext_resource path="res://Levels/Level4/Boy.tscn" type="PackedScene" id=10]
@@ -39,6 +39,7 @@
 [ext_resource path="res://assets/audio/shaaby-oriental-music-1974-EGYPT.mp3" type="AudioStream" id=37]
 [ext_resource path="res://Levels/Level4/Croc.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Levels/Level4/Garlic.tscn" type="PackedScene" id=39]
+[ext_resource path="res://assets/Egypt/egypt_colors_3.png" type="Texture" id=40]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -658,6 +659,13 @@ func _on_OnLog_body_exited(body):
 [node name="Level4" type="Node2D"]
 script = ExtResource( 9 )
 
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -655, -90 )
+scale = Vector2( 0.25, 0.25 )
+z_index = -100
+texture = ExtResource( 7 )
+
 [node name="TestTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -668,13 +676,13 @@ tile_data = PoolIntArray( -4128732, 16, 0, -4128731, 6, 0, -4128730, 6, 0, -4128
 follow_viewport_scale = 0.4
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 position = Vector2( 35, -364 )
-motion_scale = Vector2( 0.4, 0.001 )
-motion_mirroring = Vector2( 1920, 1080 )
+z_index = -100
+motion_scale = Vector2( 0.4, 0.3 )
+motion_mirroring = Vector2( 1920, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 7 )
+texture = ExtResource( 40 )
 
 [node name="HieroglyphsPuzzle" parent="." instance=ExtResource( 33 )]
 position = Vector2( -448, 24 )
@@ -787,6 +795,9 @@ position = Vector2( 158, -2 )
 [node name="StaticBody2D2" parent="LogBoat2" index="3"]
 position = Vector2( 91, -2 )
 
+[node name="LeftBank" parent="LogBoat2/StaticBody2D2" index="0"]
+disabled = true
+
 [node name="Stick" parent="." instance=ExtResource( 17 )]
 position = Vector2( 875, -968 )
 
@@ -836,7 +847,7 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -440, -599 )
+position = Vector2( 278, -315 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )

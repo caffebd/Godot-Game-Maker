@@ -17,14 +17,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "attack",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "duck",
+"name": "jump",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ) ],
@@ -37,10 +32,15 @@ animations = [ {
 "name": "climb",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "jump",
+"name": "duck",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
@@ -88,7 +88,7 @@ border_width_bottom = 1
 border_color = Color( 0.34902, 0.462745, 0.0509804, 1 )
 
 [node name="RobotPlayer" type="KinematicBody2D" groups=["player"]]
-collision_mask = 3
+collision_mask = 11
 script = ExtResource( 14 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

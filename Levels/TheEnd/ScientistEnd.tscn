@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/Bangladesh Objects/cng/two_people_cng.png" type="Texture" id=1]
+[ext_resource path="res://assets/Bangladesh Objects/scientist/scientist_idle.png" type="Texture" id=2]
+[ext_resource path="res://Levels/TheEnd/ScientistEnd.gd" type="Script" id=3]
+[ext_resource path="res://assets/audio/engine_arrive.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/audio/ship_take_0ff.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Bangladesh Objects/cng/scientist_cng.png" type="Texture" id=6]
+[ext_resource path="res://assets/Bangladesh Objects/cng/empty_cng.png" type="Texture" id=7]
+
+[sub_resource type="Curve2D" id=5]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -313, -8.00001, 32.5236, 17.6399, -32.5236, -17.6399, -391, -37, 35.9966, 31.8307, -35.9966, -31.8307, -464, -90, 9.95146, 14.0491, -9.95146, -14.0491, -548, -166, 43.4257, 44.2993, -43.4257, -44.2993, -673, -293, 0, 0, 0, 0, -714, -337, 0, 0, 0, 0, -750, -379, 0, 0, 0, 0, -773, -408, 0, 0, 0, 0, -797, -436, 0, 0, 0, 0, -821, -466, 0, 0, 0, 0, -892, -551, 23.4152, 38.6351, -23.4152, -38.6351, -1163, -890, 0, 0, 0, 0, -1289, -1059 )
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "both",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "scientist",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "empty",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 22 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 57 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="ScientistEnd" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TweenEnter" type="Tween" parent="."]
+
+[node name="TweenLeave" type="Tween" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( 298, -3 )
+curve = SubResource( 5 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( -313, -8.00001 )
+rotation = -2.88389
+
+[node name="AnimatedSpriteCar" type="AnimatedSprite" parent="Path2D/PathFollow2D"]
+position = Vector2( -2.1149, 2.92009 )
+rotation = -0.270526
+frames = SubResource( 3 )
+animation = "both"
+flip_h = true
+flip_v = true
+
+[node name="RoksanaArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoksanaArea"]
+position = Vector2( 4, 5 )
+shape = SubResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 95, -4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 336, -39 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSpriteMan" type="AnimatedSprite" parent="Area2D"]
+visible = false
+position = Vector2( -55, -11 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="ShipTakeOff" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="tween_completed" from="TweenEnter" to="." method="_on_TweenEnter_tween_completed"]
+[connection signal="body_entered" from="RoksanaArea" to="." method="_on_RoksanaArea_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

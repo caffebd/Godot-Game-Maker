@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/family/dad/father.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/brother/boy.png" type="Texture" id=2]
+[ext_resource path="res://assets/family/mum/mother.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Family" type="Node2D"]
+
+[node name="mum" type="AnimatedSprite" parent="."]
+position = Vector2( 43, 0 )
+frames = SubResource( 1 )
+animation = "idle"
+flip_h = true
+
+[node name="dad" type="AnimatedSprite" parent="."]
+position = Vector2( 79, -1 )
+frames = SubResource( 2 )
+animation = "idle"
+flip_h = true
+
+[node name="brother" type="AnimatedSprite" parent="."]
+position = Vector2( 11, 5 )
+frames = SubResource( 3 )
+animation = "idle"
+flip_h = true

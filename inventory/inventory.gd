@@ -8,7 +8,16 @@ var plantsSquashed = 0
 
 var tissues_collected = 0
 
-var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/LevelTest.tscn", "res://Levels/BangladeshNow.tscn"]
+var homeChange = false
+var doctorChange = false
+var fisherChange = true
+var farmChange = false
+var shopChange = false
+
+var science_changed = false;
+
+
+var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/Level2/Level2.tscn", "res://Levels/Level3/Level3.tscn", "res://Levels/Level4/Level4.tscn", "res://Levels/TheEnd/BangladeshEnd.tscn"]
 var canChangeLevel = false
 
 var myInventory: Array = []

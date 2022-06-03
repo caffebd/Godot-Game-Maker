@@ -39,5 +39,5 @@ process_parent = true
 [node name="Area2D" type="Area2D" parent="." groups=["eater"]]
 
 [node name="EatBody" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 28, 7 )
+position = Vector2( 9, 7 )
 shape = SubResource( 3 )

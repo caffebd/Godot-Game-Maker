@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game Maker"
-run/main_scene="res://Levels/Level4/Level4.tscn"
+run/main_scene="res://Levels/Level2/Level2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -31,6 +31,7 @@ Level1SpokenText="*res://SpokenTexts/Level1SpokenText.gd"
 Level3SpokenText="*res://SpokenTexts/Level3SpokenText.gd"
 Level2SpokenText="*res://SpokenTexts/Level2SpokenText.gd"
 Level4SpokenText="*res://SpokenTexts/Level4SpokenText.gd"
+Level5SpokenText="*res://SpokenTexts/Level5SpokenText.gd"
 
 [display]
 
