@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Font/07558_CenturyGothic.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/menu/1.png" type="Texture" id=2]
-[ext_resource path="res://Levels/Credits.gd" type="Script" id=3]
+[ext_resource path="res://assets/menu/2.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Assets.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
@@ -40,7 +40,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="Credits" type="Control"]
+[node name="Assets" type="Control"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -71,10 +71,10 @@ margin_bottom = 590.0
 texture = ExtResource( 2 )
 
 [node name="Menu" type="Button" parent="."]
-margin_left = 66.0
-margin_top = 67.0
-margin_right = 215.0
-margin_bottom = 137.0
+margin_left = 46.0
+margin_top = 74.0
+margin_right = 195.0
+margin_bottom = 144.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )
