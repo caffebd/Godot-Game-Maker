@@ -11,6 +11,7 @@ func _ready():
 	#TEMP CODE FOR TEST
 	Inventory.add_to_inventory("iTime15")
 	$RobotPlayer.update_inventory()
+	$RobotPlayer.climb_type = "climb_vine"
 	#END TEMP CODE
 
 

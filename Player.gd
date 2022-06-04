@@ -27,11 +27,15 @@ onready var inventory_items = $InventorySystem/ItemList
 
 const robot_shoot = preload("res://Robot_Shoot.tscn")
 
+var climb_type = "climb_vine"
+
 func _ready():
 	startPosition = position
 #	Inventory.add_to_inventory("iTime15")
 #	Inventory.add_to_inventory("key")
 	update_inventory()
+	if Inventory.currentLevel > 3:
+		climb_type = "climb_ladder"
 
 func _physics_process(delta):
 	velocity.y += delta * gravity
@@ -82,11 +86,11 @@ func _physics_process(delta):
 		gravity = 0
 		if Input.is_action_pressed("jump") and canMove:
 			velocity.y = -WALK_SPEED
-			$AnimatedSprite.animation = "climb"	
+			$AnimatedSprite.animation = climb_type	
 			$AnimatedSprite.play()
 		elif Input.is_action_pressed("duck"):
 			velocity.y = WALK_SPEED
-			$AnimatedSprite.animation = "climb"	
+			$AnimatedSprite.animation = climb_type	
 			$AnimatedSprite.play()
 		else:
 			velocity.y=0

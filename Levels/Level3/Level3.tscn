@@ -232,7 +232,7 @@ position = Vector2( 1678, -217 )
 position = Vector2( 179, -732 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 27, -324 )
+position = Vector2( 2068, -486 )
 
 [node name="Sabre" parent="." instance=ExtResource( 10 )]
 position = Vector2( 741, -656 )

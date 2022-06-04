@@ -2,8 +2,8 @@ extends Node2D
 
 func _ready():
 	$AudioStreamPlayer.play()
-	if Inventory.currentLevel == 1:
-		$Girl.position = Vector2($Girl.position.x+150, $Girl.position.y)
+	if Inventory.currentLevel == 0 or Inventory.currentLevel == 1:
+		$Girl.position = Vector2($Girl.position.x+170, $Girl.position.y)
 	if Inventory.currentLevel == 2:
 		$With.texture= load("res://assets/family/dad/father.png")
 	if Inventory.currentLevel == 3:

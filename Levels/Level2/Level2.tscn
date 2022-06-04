@@ -1135,7 +1135,7 @@ myLogPath = NodePath("../LogD")
 position = Vector2( 1909, -1733 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1118, -1016 )
+position = Vector2( -313, -609 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

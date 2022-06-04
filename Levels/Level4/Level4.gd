@@ -21,6 +21,7 @@ var monkeyQuestion = false
 func _ready():
 	Inventory.canChangeLevel = true
 	Inventory.currentLevel = 4
+	$RobotPlayer.climb_type = "climb_ladder"
 	#TEMP CODE FOR TEST
 	Inventory.add_to_inventory("iTime15")
 	$RobotPlayer.update_inventory()
