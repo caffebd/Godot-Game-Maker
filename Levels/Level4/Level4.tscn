@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://assets/tiles-pixel/grass-tile.png" type="Texture" id=1]
 [ext_resource path="res://assets/tiles-pixel/tileYellow_04.png" type="Texture" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Levels/Level4/Croc.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Levels/Level4/Garlic.tscn" type="PackedScene" id=39]
 [ext_resource path="res://assets/Egypt/egypt_colors_3.png" type="Texture" id=40]
+[ext_resource path="res://Levels/TransitionScene.tscn" type="PackedScene" id=41]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -847,7 +848,7 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 278, -315 )
+position = Vector2( -118, -524 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )
@@ -871,6 +872,8 @@ position = Vector2( 166, -794 )
 
 [node name="Garlic2" parent="." instance=ExtResource( 39 )]
 position = Vector2( 865, -873 )
+
+[node name="TransitionScene" parent="." instance=ExtResource( 41 )]
 
 [connection signal="body_entered" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_entered"]
 [connection signal="body_exited" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_exited"]

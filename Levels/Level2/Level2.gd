@@ -5,6 +5,14 @@ var dadNoMoreSpeak = false
 
 signal continue_conversation
 
+func _ready():
+	Inventory.canChangeLevel = true
+	Inventory.currentLevel = 2	
+	#TEMP CODE FOR TEST
+	Inventory.add_to_inventory("iTime15")
+	$RobotPlayer.update_inventory()
+	#END TEMP CODE
+
 
 func _conversation(personA: String, personB: String):
 	$RobotPlayer.is_active = false

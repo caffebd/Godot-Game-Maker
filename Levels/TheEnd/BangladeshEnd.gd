@@ -15,6 +15,7 @@ var scientistDone = false
 var scienceChange = false
 
 func _ready():
+	Inventory.currentLevel = 1
 	if Inventory.music_on:
 		$BackgroundMusic.play()
 	if Inventory.doctorChange or Inventory.fisherChange or Inventory.farmChange or Inventory.shopChange:

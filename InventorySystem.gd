@@ -5,14 +5,17 @@ var currentlySelected: int = -1
 
 
 func _on_ItemList_item_selected(index):
+	print (Inventory.myInventory[index])
 	
 	if Inventory.myInventory[index] == "iTime15":
-		if Inventory.canChangeLevel and not Inventory.science_changed:
+		if Inventory.canChangeLevel:
 			
-			var loadLevel = Inventory.levels[Inventory.currentLevel]
+			var loadLevel = "res://Levels/TimeTravel.tscn"
 			var _nextScene = get_tree().change_scene(loadLevel)
-		else:
+		elif Inventory.science_changed:
 			var _nextScene = get_tree().change_scene("res://Levels/BangladeshNow.tscn")
+		else:
+			get_parent().restart(false)
 		
 
 		

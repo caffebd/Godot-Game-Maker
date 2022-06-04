@@ -10,14 +10,14 @@ var complete = false
 
 func _ready():
 	startPos = position
-	$AnimatedSprite.animation = "idle"
+	$AnimatedSprite.animation = "walk"
 	$AnimatedSprite.play()
 
 func _process(delta):
 	if not moving:
 		return
 	
-	$AnimatedSprite.animation = "idle"
+	$AnimatedSprite.animation = "walk"
 	$AnimatedSprite.play()
 		
 	if position.x <= startPos.x + distance && !$AnimatedSprite.flip_h:	
@@ -31,6 +31,7 @@ func _process(delta):
 
 func eat():
 	moving = false
+	position = Vector2(position.x, position.y+8)
 	$AnimatedSprite.play("eat")
 	$MainBody.call_deferred("set", "disabled", true)
 

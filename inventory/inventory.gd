@@ -2,7 +2,7 @@ extends Node
 
 var music_on = true
 
-var currentLevel = 0
+var currentLevel = 1
 
 var plantsSquashed = 0
 
