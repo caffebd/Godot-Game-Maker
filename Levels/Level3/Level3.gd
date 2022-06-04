@@ -19,8 +19,8 @@ func _ready():
 	Inventory.canChangeLevel = true
 	Inventory.currentLevel = 3
 
-	Inventory.add_to_inventory("iTime15")
-	$RobotPlayer.update_inventory()
+#	Inventory.add_to_inventory("iTime15")
+#	$RobotPlayer.update_inventory()
 
 
 func _on_Mum_body_entered(body):

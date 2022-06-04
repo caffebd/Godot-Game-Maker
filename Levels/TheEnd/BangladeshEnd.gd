@@ -23,8 +23,8 @@ func _ready():
 		Inventory.science_changed = true	
 	_conversation("roksanaFamily", "")
 	#TEMP CODE FOR TEST
-	Inventory.add_to_inventory("iTime15")
-	$RobotPlayer.update_inventory()
+#	Inventory.add_to_inventory("iTime15")
+#	$RobotPlayer.update_inventory()
 	#END TEMP CODE
 	
 func _on_Shop_body_entered(body):

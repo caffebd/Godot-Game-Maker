@@ -23,8 +23,8 @@ func _ready():
 	Inventory.currentLevel = 4
 	$RobotPlayer.climb_type = "climb_ladder"
 	#TEMP CODE FOR TEST
-	Inventory.add_to_inventory("iTime15")
-	$RobotPlayer.update_inventory()
+#	Inventory.add_to_inventory("iTime15")
+#	$RobotPlayer.update_inventory()
 	#END TEMP CODE
 	if Inventory.music_on:
 		$BackgroundMusic.play()

@@ -768,17 +768,11 @@ duration = 3.0
 move_to = Vector2( 75, 0 )
 active = false
 
-[node name="BlockLeft" parent="LogBoat/Base/Block2" index="0"]
-disabled = true
-
 [node name="StaticBody2D" parent="LogBoat" index="2"]
 position = Vector2( -6, 4 )
 
 [node name="StaticBody2D2" parent="LogBoat" index="3"]
 position = Vector2( 90, -4 )
-
-[node name="LeftBank" parent="LogBoat/StaticBody2D2" index="0"]
-disabled = true
 
 [node name="LogBoat2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 122, -494 )
@@ -787,17 +781,11 @@ duration = 4.0
 move_to = Vector2( 240, 0 )
 active = false
 
-[node name="BlockLeft" parent="LogBoat2/Base/Block2" index="0"]
-disabled = true
-
 [node name="StaticBody2D" parent="LogBoat2" index="2"]
 position = Vector2( 158, -2 )
 
 [node name="StaticBody2D2" parent="LogBoat2" index="3"]
 position = Vector2( 91, -2 )
-
-[node name="LeftBank" parent="LogBoat2/StaticBody2D2" index="0"]
-disabled = true
 
 [node name="Stick" parent="." instance=ExtResource( 17 )]
 position = Vector2( 875, -968 )
@@ -848,7 +836,7 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 356, -826 )
+position = Vector2( -419, -600 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )

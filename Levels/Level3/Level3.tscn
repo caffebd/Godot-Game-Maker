@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Levels/Level3/JungleTilesR.tres" type="TileSet" id=1]
 [ext_resource path="res://inventory/Grass.tscn" type="PackedScene" id=2]
@@ -44,9 +44,6 @@ extents = Vector2( 1.5, 88 )
 
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 2.75, 55.5 )
-
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 12.5625, 18.125 )
 
 [sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 2.5, 56.5 )
@@ -161,10 +158,6 @@ shape = SubResource( 14 )
 position = Vector2( 1237.75, -634.5 )
 shape = SubResource( 22 )
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="Ladders"]
-position = Vector2( 1632.44, -489.125 )
-shape = SubResource( 15 )
-
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Ladders"]
 position = Vector2( 1239, -631 )
 shape = SubResource( 16 )
@@ -217,7 +210,7 @@ position = Vector2( 144, 9 )
 position = Vector2( 726, 7 )
 
 [node name="Fruit5" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1970, -523 )
+position = Vector2( 1873, -559 )
 
 [node name="Fruit8" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1200, -201 )
@@ -232,10 +225,13 @@ position = Vector2( 1678, -217 )
 position = Vector2( 179, -732 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1472, -503 )
+position = Vector2( 7, -323 )
+
+[node name="CollisionShape2D" parent="RobotPlayer" index="1"]
+position = Vector2( 1, 4 )
 
 [node name="Sabre" parent="." instance=ExtResource( 10 )]
-position = Vector2( 741, -656 )
+position = Vector2( 719, -707 )
 distance = 100
 speed = 80.0
 moving = true
@@ -261,15 +257,11 @@ duration = 3.0
 move_to = Vector2( 185, 0 )
 active = false
 
-[node name="BlockLeft" parent="LogBoat/Base/Block2" index="0"]
-disabled = true
-
 [node name="RightBank" parent="LogBoat/StaticBody2D" index="0"]
 position = Vector2( 214, -38 )
 
 [node name="LeftBank" parent="LogBoat/StaticBody2D2" index="0"]
 position = Vector2( -30, -38 )
-disabled = true
 
 [node name="LogBoat2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 963, -768 )
@@ -281,12 +273,16 @@ direction_forward = false
 [node name="BlockRight" parent="LogBoat2/Base/Block1" index="0"]
 disabled = true
 
+[node name="BlockLeft" parent="LogBoat2/Base/Block2" index="0"]
+disabled = false
+
 [node name="RightBank" parent="LogBoat2/StaticBody2D" index="0"]
 position = Vector2( 27, -33 )
 disabled = true
 
 [node name="LeftBank" parent="LogBoat2/StaticBody2D2" index="0"]
 position = Vector2( -321, -35 )
+disabled = false
 
 [node name="MudFloor" parent="." instance=ExtResource( 12 )]
 position = Vector2( 422, -424 )
