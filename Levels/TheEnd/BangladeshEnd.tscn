@@ -129,6 +129,8 @@ frames = SubResource( 3 )
 stream = ExtResource( 17 )
 volume_db = -38.365
 
+[node name="TransitionScene2" parent="." instance=ExtResource( 12 )]
+
 [connection signal="body_entered" from="Shop" to="." method="_on_Shop_body_entered"]
 [connection signal="body_entered" from="Farmer" to="." method="_on_Farmer_body_entered"]
 [connection signal="body_entered" from="Fisherman" to="." method="_on_Fisherman_body_entered"]

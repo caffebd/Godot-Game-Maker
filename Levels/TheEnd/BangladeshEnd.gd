@@ -15,7 +15,7 @@ var scientistDone = false
 var scienceChange = false
 
 func _ready():
-	Inventory.currentLevel = 1
+	Inventory.currentLevel = 0
 	if Inventory.music_on:
 		$BackgroundMusic.play()
 	if Inventory.doctorChange or Inventory.fisherChange or Inventory.farmChange or Inventory.shopChange:
@@ -142,7 +142,8 @@ func _on_TweenEnter_tween_completed(object, key):
 		
 	if not scientistDone:
 		scientistDone = true
-		if scienceChange: 
+		if scienceChange:
+			Inventory.canChangeLevel = true 
 			_conversation("roksanaScientistChange", "scientistChange")
 		else:
 			_conversation("roksanaScientist", "scientist")

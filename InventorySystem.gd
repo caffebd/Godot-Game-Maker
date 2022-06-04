@@ -12,8 +12,7 @@ func _on_ItemList_item_selected(index):
 			
 			var loadLevel = "res://Levels/TimeTravel.tscn"
 			var _nextScene = get_tree().change_scene(loadLevel)
-		elif Inventory.science_changed:
-			var _nextScene = get_tree().change_scene("res://Levels/BangladeshNow.tscn")
+
 		else:
 			get_parent().restart(false)
 		

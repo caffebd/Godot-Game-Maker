@@ -52,51 +52,47 @@ script = ExtResource( 4 )
 motion_scale = Vector2( 0.01, 1 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Layer1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 13 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 13, -425 )
 motion_scale = Vector2( 0.2, 1 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 2, -143 )
+[node name="Layer2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 0, -586 )
 texture = ExtResource( 10 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 9, -599 )
 motion_scale = Vector2( 0.4, 1 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 0, 67 )
+[node name="Layer3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 0, -541 )
 texture = ExtResource( 11 )
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 18, -577 )
 motion_scale = Vector2( 0.8, 1 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-position = Vector2( 0, 67 )
+[node name="Layer4" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2( 0, -494 )
 texture = ExtResource( 12 )
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -1, -532 )
 motion_scale = Vector2( 0.9, 1 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
-position = Vector2( 0, 67 )
+[node name="Layer5" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2( 0, -466 )
 texture = ExtResource( 16 )
 
 [node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -3, -517 )
+position = Vector2( 9, 0 )
 motion_mirroring = Vector2( 1920, 0 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2( 0, 67 )
+[node name="Layer6" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2( 0, -448 )
 texture = ExtResource( 15 )
 
 [node name="Shop" parent="." instance=ExtResource( 3 )]
