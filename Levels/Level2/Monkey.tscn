@@ -1,24 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/Forest Objects/monkey.png" type="Texture" id=1]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/mongky 2.png" type="Texture" id=1]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/monkey 1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/mongky3.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 53, 62.75 )
+extents = Vector2( 86.75, 5.6875 )
 
 [node name="Monkey" type="Area2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -3, 58 )
+position = Vector2( 35.25, 2.6875 )
 shape = SubResource( 2 )

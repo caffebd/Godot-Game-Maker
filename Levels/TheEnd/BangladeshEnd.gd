@@ -26,6 +26,12 @@ func _ready():
 #	Inventory.add_to_inventory("iTime15")
 #	$RobotPlayer.update_inventory()
 	#END TEMP CODE
+	if Inventory.plantsSquashed > 10:
+		Inventory.farmChange = true
+	if Inventory.myInventory.has("fruit"):
+		Inventory.farmChange = true
+	if Inventory.tissues_collected <10:
+		Inventory.doctorChange = true
 	
 func _on_Shop_body_entered(body):
 	if body.get_groups().has("player") and not shopDone:

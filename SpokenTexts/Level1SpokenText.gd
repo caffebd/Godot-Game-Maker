@@ -6,8 +6,8 @@ var roksanaTextFarmer = ["Hello Mr Krishi, my father is doing well. How are your
 var farmerText = ["Hello Roksana, how's your father?", "Well not too bad but could be better.", "I have to be very careful to watch out for disease, otherwise all the crops could be lost.", "Goodbye Roksana"]
 var roksanaTextFisher = ["Hello Mr Ilish, my mother is fine. Have you caught a lot of fish today?", "That's great. Maybe I will come back later and buy some for dinner.", "Goodbye, Mr Ilish."]
 var fisherText = ["Hello Roksana, how's your mother?", "Yes, there are lots of fish around at the moment.", "Of course. I'll see you later. Goodbye, Roksana."]
-var roksanaTextDoctor = ["Hello Doctor Rugi. Kobir's fine, just a little bit naughty.", "Yes, he loves building things.", "Probably", "I won't! Goodbye, Doctor Rugi."]
-var doctorText = ["Hello Roksana, how's your little brother Kobir doing?", "Well that's what little brothers are for! Is he still playing with building blocks?", "Maybe he will be a builder when he grows up?", "Well I'll see you soon. Don't forget your check-up next week."]
+var roksanaTextDoctor = ["Hello Doctor Rugi. Kobir's fine, just a little bit naughty.", "Yes, he loves taking photographs.", "Maybe...", "I won't! Goodbye, Doctor Rugi."]
+var doctorText = ["Hello Roksana, how's your little brother Kobir doing?", "Well that's what little brothers are for! Is he still playing with that camera?", "Maybe he'll be a photographer when he grows up?", "Well I'll see you soon. Don't forget your check-up next week."]
 var roksanaTextHome = ["Hello! Hello! Mum, Dad, Kobir...", "There's nobody home. Where is everyone?", "I'd better go look for them."]
 
 var roksanaTextScientist = ["Who are you?", "What's going on? Where is my family?", "What do you mean?", "Somebody, you mean you?", "How do we do that?", "ME!", "I don't know how to go back in time!", "What's that?", "?????", "What?", "Wait!!!!!!"]

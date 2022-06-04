@@ -119,3 +119,8 @@ func _on_OnLog_body_exited(body):
 	if body.get_groups().has("player"):
 		$Base/StickHint.visible = false
 		Inventory.current_action_object = null
+
+
+func _on_Level4_show_boat():
+	$Base/BoatSprite.visible=true
+	$Base/LogSprite.visible = false

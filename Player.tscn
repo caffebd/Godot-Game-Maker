@@ -103,8 +103,7 @@ script = ExtResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 5 )
 frames = SubResource( 1 )
-animation = "climb_vine"
-frame = 1
+animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 6 )
@@ -168,18 +167,18 @@ valign = 1
 
 [node name="MainSpokenText" parent="." instance=ExtResource( 21 )]
 visible = false
-margin_left = -151.0
-margin_top = 57.0
-margin_right = 153.0
-margin_bottom = 97.0
+margin_left = -150.0
+margin_top = 68.0
+margin_right = 154.0
+margin_bottom = 108.0
 rect_min_size = Vector2( 150, 40 )
 
 [node name="InventorySystem" parent="." instance=ExtResource( 20 )]
 visible = false
 margin_left = -111.0
-margin_top = -136.0
+margin_top = -150.0
 margin_right = 132.0
-margin_bottom = -96.0
+margin_bottom = -110.0
 
 [node name="Buttons" type="Control" parent="."]
 visible = false

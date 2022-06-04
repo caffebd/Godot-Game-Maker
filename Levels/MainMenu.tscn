@@ -106,8 +106,6 @@ custom_styles/pressed = SubResource( 8 )
 custom_styles/normal = SubResource( 7 )
 
 [node name="TransitionScene" parent="." instance=ExtResource( 3 )]
-offset = Vector2( 0, 700 )
-transform = Transform2D( 1, 0, 0, 1, 0, 700 )
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Instructions" to="." method="_on_Instructions_pressed"]

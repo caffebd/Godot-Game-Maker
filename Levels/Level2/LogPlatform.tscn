@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Levels/Level2/LogPlatform.gd" type="Script" id=1]
 [ext_resource path="res://assets/Forest Objects/logBoat.png" type="Texture" id=2]
 [ext_resource path="res://assets/audio/water_splash.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/Forest Objects/stick.png" type="Texture" id=4]
+[ext_resource path="res://assets/Egypt/egypt-boat.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.5, 5.5 )
@@ -25,8 +26,13 @@ duration = 1.0
 
 [node name="Base" type="Node2D" parent="."]
 
-[node name="Sprite" type="Sprite" parent="Base"]
+[node name="LogSprite" type="Sprite" parent="Base"]
 texture = ExtResource( 2 )
+
+[node name="BoatSprite" type="Sprite" parent="Base"]
+visible = false
+position = Vector2( 1, -3 )
+texture = ExtResource( 5 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Base"]
 

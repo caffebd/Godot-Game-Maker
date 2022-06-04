@@ -27,6 +27,7 @@ func _on_Mum_body_entered(body):
 	if not mumDone and body.get_groups().has("player"):
 		mumDone = true
 		if Inventory.myInventory.has("book"):
+			Inventory.ufo = false
 			_conversation("roksanaMumBook", "mumBook", true)
 		else:
 			mumDone = true
@@ -36,6 +37,7 @@ func _on_Mum_body_entered(body):
 	if mumDone and not mumNoMoreSpeak and body.get_groups().has("player"):
 		if Inventory.myInventory.has("book"):
 			mumNoMoreSpeak = true
+			Inventory.ufo = false
 			_conversation("mumFoundBook", "roksanaMumFoundBook", true)
 		else:
 			$RobotPlayer/iTime.visible = true
@@ -102,9 +104,10 @@ func _on_YesButton_pressed():
 	if mumQuestion:
 		$RobotPlayer/MainSpokenText.text ="Great, let's get home!"
 		$RobotPlayer/Buttons.visible = false
-		yield (self, "continue_conversation")
+		yield(get_tree().create_timer(3.0), "timeout")
 		mumQuestion = false
 		emit_signal("received_answer")
+		Inventory.farmChange = true
 	if monkeyQuestion:
 		$RobotPlayer.is_active = false
 		$RobotPlayer/MainSpokenText.text ="Hello! Mr, Monkey!"
@@ -112,24 +115,33 @@ func _on_YesButton_pressed():
 		yield (self, "continue_conversation")
 		$RobotPlayer/MainSpokenText.text ="..."
 		yield (self, "continue_conversation")
-		$RobotPlayer/MainSpokenText.text ="Oh, he doesn't seem to want to talk."
+		$RobotPlayer/MainSpokenText.text ="Hello! How are you today? Very busy?"
 		yield (self, "continue_conversation")
+		$RobotPlayer/MainSpokenText.text ="..."
+		yield (self, "continue_conversation")		
+		$RobotPlayer/MainSpokenText.text ="Oh, he doesn't seem to want to talk."
+		$RobotPlayer.is_active = true
 		monkeyQuestion = false
+		monkeyDone = true		
+		yield(get_tree().create_timer(3.0), "timeout")
+		Inventory.shopChange = true
 		emit_signal("received_answer")
 		
 func _on_NoButton_pressed():
 	if mumQuestion:
 		$RobotPlayer/MainSpokenText.text ="You're probably right. Let's get home!"
 		$RobotPlayer/Buttons.visible = false
-		yield (self, "continue_conversation")
+		yield(get_tree().create_timer(3.0), "timeout")
 		mumQuestion = false
 		emit_signal("received_answer")
 	if monkeyQuestion:
 		$RobotPlayer.is_active = false
 		monkeyQuestion = false
-		$RobotPlayer/MainSpokenText.text ="No, he's not going to understand me anyway."
+		monkeyDone = false
+		$RobotPlayer/MainSpokenText.text ="Ok, maybe later."
 		$RobotPlayer/Buttons.visible = false
-		yield (self, "continue_conversation")
+		$RobotPlayer.is_active = true
+		yield(get_tree().create_timer(3.0), "timeout")
 		emit_signal("received_answer")
 
 
@@ -152,7 +164,7 @@ func _on_Monkey_body_entered(body):
 		$RobotPlayer/Speaker.visible = false
 		$RobotPlayer/MainSpokenText.visible = false
 		$RobotPlayer/Buttons.visible = false
-		monkeyDone = true
+		
 	
 
 

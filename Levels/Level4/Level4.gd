@@ -18,9 +18,12 @@ var boyNoMoreSpeak = false
 var mumQuestion = false
 var monkeyQuestion = false
 
+signal show_boat
+
 func _ready():
 	Inventory.canChangeLevel = true
 	Inventory.currentLevel = 4
+	emit_signal("show_boat")
 	$RobotPlayer.climb_type = "climb_ladder"
 	#TEMP CODE FOR TEST
 #	Inventory.add_to_inventory("iTime15")
@@ -329,6 +332,7 @@ func _on_Boy_body_entered(body):
 		
 		if Inventory.myInventory.has("photograph"):
 			boyNoMoreSpeak = true
+			Inventory.homeChange = false
 			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
 			$RobotPlayer.update_inventory()
 			_conversation_l4("kobirPhoto", "roksanaKobirPhoto", true)
@@ -340,6 +344,7 @@ func _on_Boy_body_entered(body):
 	if boyDone and not boyNoMoreSpeak and body.get_groups().has("player"):
 		if Inventory.myInventory.has("photograph"):
 			boyNoMoreSpeak = true
+			Inventory.homeChange = false
 			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
 			$RobotPlayer.update_inventory()
 			_conversation_l4("roksanaFoundPhoto", "kobirFoundPhoto", true)

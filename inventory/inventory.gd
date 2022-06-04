@@ -10,9 +10,11 @@ var tissues_collected = 0
 
 var homeChange = false
 var doctorChange = false
-var fisherChange = true
+var fisherChange = false
 var farmChange = false
 var shopChange = false
+var houseChange = true
+var ufo = true
 
 var science_changed = false;
 

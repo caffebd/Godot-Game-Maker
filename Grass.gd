@@ -17,7 +17,7 @@ func _on_Grass_body_entered(body):
 		$AnimatedSprite.play("grassSquash")
 		Inventory.plantsSquashed += 1
 	
-		if Inventory.plantsSquashed < 3:
+		if Inventory.plantsSquashed < 4:
 			player.is_active = false
 			player.get_node("Speaker").text = "Roksana"
 			player.get_node("MainSpokenText").text ="Maybe I should be more careful"

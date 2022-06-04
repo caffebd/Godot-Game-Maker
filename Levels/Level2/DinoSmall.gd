@@ -30,6 +30,7 @@ func _process(delta):
 			$AnimatedSprite.flip_h = false
 
 func eat():
+	Inventory.fisherChange = true
 	moving = false
 	position = Vector2(position.x, position.y+8)
 	$AnimatedSprite.play("eat")

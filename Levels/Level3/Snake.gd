@@ -30,6 +30,7 @@ func _process(delta):
 			$AnimatedSprite.flip_h = false
 
 func eat():
+	Inventory.fisherChange = true
 	moving = false
 	$AnimatedSprite.play("eat")
 	$MainBody.call_deferred("set", "disabled", true)

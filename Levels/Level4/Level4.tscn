@@ -655,6 +655,11 @@ func _on_OnLog_body_exited(body):
 	if body.get_groups().has(\"player\"):
 		$Base/StickHint.visible = false
 		Inventory.current_action_object = null
+
+
+func _on_Level4_show_boat():
+	$Base/BoatSprite.visible=true
+	$Base/LogSprite.visible = false
 "
 
 [node name="Level4" type="Node2D"]
@@ -763,10 +768,17 @@ shape = SubResource( 40 )
 position = Vector2( -616, 83 )
 
 [node name="LogBoat" parent="." instance=ExtResource( 16 )]
-position = Vector2( 846, -652 )
+position = Vector2( 846, -653 )
 duration = 3.0
 move_to = Vector2( 75, 0 )
 active = false
+
+[node name="LogSprite" parent="LogBoat/Base" index="0"]
+position = Vector2( 0, -2 )
+
+[node name="BoatSprite" parent="LogBoat/Base" index="1"]
+visible = true
+position = Vector2( 1, -9 )
 
 [node name="StaticBody2D" parent="LogBoat" index="2"]
 position = Vector2( -6, 4 )
@@ -780,6 +792,10 @@ script = SubResource( 30 )
 duration = 4.0
 move_to = Vector2( 240, 0 )
 active = false
+
+[node name="BoatSprite" parent="LogBoat2/Base" index="1"]
+visible = true
+position = Vector2( 1, -8 )
 
 [node name="StaticBody2D" parent="LogBoat2" index="2"]
 position = Vector2( 158, -2 )
@@ -863,6 +879,8 @@ position = Vector2( 865, -873 )
 
 [node name="TransitionScene" parent="." instance=ExtResource( 41 )]
 
+[connection signal="show_boat" from="." to="LogBoat" method="_on_Level4_show_boat"]
+[connection signal="show_boat" from="." to="LogBoat2" method="_on_Level4_show_boat"]
 [connection signal="body_entered" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_entered"]
 [connection signal="body_exited" from="Ladders" to="RobotPlayer" method="_on_Ladders_body_exited"]
 [connection signal="body_entered" from="Boy" to="." method="_on_Boy_body_entered"]
