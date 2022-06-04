@@ -848,7 +848,7 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -118, -524 )
+position = Vector2( 356, -826 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )

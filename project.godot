@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Game Maker"
-run/main_scene="res://Levels/Level2/Level2.tscn"
+run/main_scene="res://Levels/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

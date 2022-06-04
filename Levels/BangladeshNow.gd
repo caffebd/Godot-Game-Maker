@@ -12,6 +12,11 @@ var doctorDone = false
 var homeDone = false
 var scientistDone = false
 
+func _ready():
+	Inventory.currentLevel = 1
+	if Inventory.music_on:
+		$BackgroundMusic.play()
+
 func _on_Shop_body_entered(body):
 	if body.get_groups().has("player") and not shopDone:
 		shopDone = true
