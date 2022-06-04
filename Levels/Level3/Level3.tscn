@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Levels/Level3/JungleTilesR.tres" type="TileSet" id=1]
 [ext_resource path="res://inventory/Grass.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/audio/16bit music.wav" type="AudioStream" id=13]
 [ext_resource path="res://Levels/TransitionScene.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Levels/Level2/Monkey.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Forest Objects/jungle-bg-somir.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 1.5, 163.25 )
@@ -67,6 +68,16 @@ extents = Vector2( 1.5, 33 )
 [node name="Level3" type="Node2D"]
 position = Vector2( 170, -117 )
 script = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1, 0.001 )
+motion_mirroring = Vector2( 1920, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 6, -356 )
+texture = ExtResource( 16 )
 
 [node name="JungleMap" type="TileMap" parent="."]
 position = Vector2( -2, 0 )
@@ -229,7 +240,7 @@ position = Vector2( 179, -732 )
 position = Vector2( 112, -418 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( 24, -326 )
+position = Vector2( 1384, -507 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 1, 4 )
