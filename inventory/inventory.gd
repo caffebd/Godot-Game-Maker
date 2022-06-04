@@ -9,10 +9,10 @@ var plantsSquashed = 0
 var tissues_collected = 0
 
 
-var doctorChange = false
-var fisherChange = false
-var farmChange = false
-var shopChange = false
+var doctorChange = true
+var fisherChange = true
+var farmChange = true
+var shopChange = true
 var houseChange = true
 var ufo = true
 

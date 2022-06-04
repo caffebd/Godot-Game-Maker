@@ -4,7 +4,7 @@ var roksanaTextBanor = ["Hello Mr Banor, how is everything?", "Well, I guess not
 var banorText =  ["Oh, same as always. Nothing ever happens around here does it?", "Stay in school Roksana, I'm sure you have a bright future ahead of you.", "Goodbye Roksana."]
 
 var roksanaTextBanorChange = ["Mr... Mr... Mr B.....", "You're a... a...", "How did this happen?", "Erm... no... No thank you. I'd better go!", "B...B... bye Mr Banor"]
-var banorTextChange = ["Hello Roksana, how are you today?", "Everything ok?", "Oh I know. I'm normally closed on Monday but I decided to open up for a change. No need to look so shocked.", "I was just swinging around at home with nothing to do so though I would open the shop. Can I get you anything?", "Good girl, off to get your homework done.", "Bye Roksana."]
+var banorTextChange = ["Hello Roksana, how are you today?", "Everything ok?", "Oh I know. I'm normally closed on Mondays but I decided to open up for a change. No need to look so shocked.", "I was just swinging around at home with nothing to do so I thought I would open the shop. Can I get you anything?", "Good girl, off to get your homework done.", "Bye Roksana."]
 
 var roksanaTextFarmer = ["They're fine, thank you.", "Is everything okay on your farm", "That's good news. Well goodbye, I'd better get going."]
 var farmerText = ["Hello Roksana, how's your family?", "That's good to hear.", "Pretty good, bit of a bumper crop for cucumbers this year.", "Bye Roksana"]

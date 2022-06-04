@@ -578,7 +578,7 @@ layer = 100
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground2/ParallaxLayer"]
-position = Vector2( 18, -350 )
+position = Vector2( 18, -335 )
 texture = ExtResource( 15 )
 
 [connection signal="body_entered" from="Shop" to="." method="_on_Shop_body_entered"]

@@ -49,6 +49,8 @@ func _the_changes():
 	if Inventory.farmChange:
 		$Farmer/CropsAlive.visible=false
 		$Farmer/CropsDead.visible=true
+		$Farmer/CartEmpty.visible = true
+		$Farmer/CartFull.visible = false
 	if Inventory.shopChange:
 		$Shop/ShopNormal.visible=false
 		$Shop/AnimatedMan.visible=false
@@ -99,6 +101,7 @@ func _on_Home_body_entered(body):
 		else:
 			_conversation("roksanaHome", "")
 	if body.get_groups().has("player") and scientistDone:
+		Inventory.game_complete = true
 		$TransitionScene.transition() 
 
 func _conversation(personA: String, personB: String):
