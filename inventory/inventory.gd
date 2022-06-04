@@ -8,7 +8,7 @@ var plantsSquashed = 0
 
 var tissues_collected = 0
 
-var homeChange = false
+
 var doctorChange = false
 var fisherChange = false
 var farmChange = false

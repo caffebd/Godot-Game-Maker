@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Bangladesh Objects/Props/Village.png" type="Texture" id=1]
+[ext_resource path="res://assets/Bangladesh Objects/Props/house pyramid.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 120.25, 30 )
+extents = Vector2( 120.25, 57.5 )
 
 [node name="Home" type="Area2D"]
 scale = Vector2( 0.4, 0.4 )
@@ -13,10 +14,12 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
 [node name="HouseEgypt" type="Sprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 1 )
+visible = false
+position = Vector2( 0, -110 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.74999, 67.5 )
+position = Vector2( 2.5, 95 )
 scale = Vector2( 1, 1 )
 shape = SubResource( 1 )

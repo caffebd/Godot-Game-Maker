@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Bangladesh Objects/Props/counter.png" type="Texture" id=1]
 [ext_resource path="res://assets/Bangladesh Objects/shopkeeper/shopkeeper idle 3.png" type="Texture" id=2]
@@ -7,9 +7,20 @@
 [ext_resource path="res://assets/Bangladesh Objects/shopkeeper/shopkeeper idle 4.png" type="Texture" id=5]
 [ext_resource path="res://assets/Bangladesh Objects/Props/shop with banana.png" type="Texture" id=6]
 [ext_resource path="res://assets/Bangladesh Objects/Props/shop without banana.png" type="Texture" id=7]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/mongky3.png" type="Texture" id=8]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/mongky 2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Bangladesh Objects/monkey/monkey 1.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.5, 14.25 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 3.0
+} ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -34,7 +45,16 @@ texture = ExtResource( 7 )
 position = Vector2( -6, 37 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedMonkey" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -3, -15 )
+scale = Vector2( 1.3, 1.3 )
+frames = SubResource( 3 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="AnimatedMan" type="AnimatedSprite" parent="."]
 position = Vector2( -3, 13 )
 scale = Vector2( 1.3, 1.3 )
 frames = SubResource( 2 )

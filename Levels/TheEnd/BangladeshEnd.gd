@@ -32,6 +32,28 @@ func _ready():
 		Inventory.farmChange = true
 	if Inventory.tissues_collected <10:
 		Inventory.doctorChange = true
+
+func _the_changes():
+	if Inventory.houseChange:
+		$Home/House.visible = false
+		$Home/HouseEgypt.visible = true
+	if Inventory.doctorChange:
+		$Doctor/Queue.visible = true
+	if Inventory.fisherChange:
+		$Fisherman/FishBowl.visible=false
+		$Fisherman/FishBowlEmpty.visible=true
+		$SmallFish.visible=false
+		$BigFish.visible=true
+		#big fish
+	if Inventory.farmChange:
+		$Farmer/CropsAlive.visible=false
+		$Farmer/CropsDead.visible=true
+	if Inventory.shopChange:
+		$Shop/ShopNormal.visible=false
+		$Shop/AnimatedMan.visible=false
+		$Shop/AnimatedMonkey.visible=true
+		$Shop/ShopMonkey.visible=true
+	
 	
 func _on_Shop_body_entered(body):
 	if body.get_groups().has("player") and not shopDone:
@@ -68,7 +90,7 @@ func _on_Doctor_body_entered(body):
 func _on_Home_body_entered(body):
 	if body.get_groups().has("player") and not homeDone:
 		homeDone = true
-		if Inventory.homeChange:
+		if Inventory.houseChange:
 			_conversation("roksanaHomeChange", "")
 		else:
 			_conversation("roksanaHome", "")
