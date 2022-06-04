@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/family/mum/mother.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/mum/mather4.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/mum/mather2.png" type="Texture" id=2]
+[ext_resource path="res://assets/family/mum/mather3.png" type="Texture" id=3]
+[ext_resource path="res://assets/family/mum/mather1.png" type="Texture" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -18,6 +21,7 @@ extents = Vector2( 70, 15 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 5 )

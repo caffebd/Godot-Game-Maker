@@ -32,6 +32,7 @@ func _ready():
 		Inventory.farmChange = true
 	if Inventory.tissues_collected <10:
 		Inventory.doctorChange = true
+	_the_changes()
 
 func _the_changes():
 	if Inventory.houseChange:
@@ -53,6 +54,9 @@ func _the_changes():
 		$Shop/AnimatedMan.visible=false
 		$Shop/AnimatedMonkey.visible=true
 		$Shop/ShopMonkey.visible=true
+	if Inventory.ufo:
+		$UFO.visible = true
+		$UFO/AudioStreamPlayer2D.play()
 	
 	
 func _on_Shop_body_entered(body):
@@ -134,9 +138,7 @@ func _conversation(personA: String, personB: String):
 #
 	if personB == "scientistChange":					
 		$RobotPlayer.open_inventory()
-	if "banor" in personB or "banor" in personA:
-		$AnimatedArrows.play()
-		$AnimatedArrows.visible = true
+
 
 
 func _get_person_name(person: String):

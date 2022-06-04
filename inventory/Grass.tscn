@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/Forest Objects/grassOk.png" type="Texture" id=1]
+[ext_resource path="res://assets/Forest Objects/plantOK.png" type="Texture" id=1]
 [ext_resource path="res://Grass.gd" type="Script" id=2]
-[ext_resource path="res://assets/Forest Objects/grassSq2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Forest Objects/plantCrush.png" type="Texture" id=3]
 [ext_resource path="res://assets/audio/crunch_sound.wav" type="AudioStream" id=4]
 
 [sub_resource type="SpriteFrames" id=2]
@@ -25,6 +25,7 @@ extents = Vector2( 5.5, 3.5 )
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 2 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 2 )
 animation = "grassOK"

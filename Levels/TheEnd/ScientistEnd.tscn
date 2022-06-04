@@ -15,9 +15,9 @@ _data = {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "both",
+"name": "empty",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -25,9 +25,9 @@ animations = [ {
 "name": "scientist",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "empty",
+"name": "both",
 "speed": 5.0
 } ]
 
@@ -46,6 +46,7 @@ animations = [ {
 } ]
 
 [node name="ScientistEnd" type="Node2D"]
+position = Vector2( 3, 0 )
 script = ExtResource( 3 )
 
 [node name="TweenEnter" type="Tween" parent="."]
@@ -83,7 +84,8 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSpriteMan" type="AnimatedSprite" parent="Area2D"]
 visible = false
-position = Vector2( -55, -11 )
+position = Vector2( -25, -6 )
+scale = Vector2( 1.1, 1.1 )
 frames = SubResource( 2 )
 animation = "idle"
 

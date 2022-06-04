@@ -18,6 +18,8 @@ var ufo = true
 
 var science_changed = false;
 
+var game_complete = false
+
 
 var levels = ["res://Levels/BangladeshNow.tscn", "res://Levels/Level2/Level2.tscn", "res://Levels/Level3/Level3.tscn", "res://Levels/Level4/Level4.tscn", "res://Levels/TheEnd/BangladeshEnd.tscn"]
 var canChangeLevel = false

@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://assets/Egypt/boy.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/brother/3.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/brother/4.png" type="Texture" id=2]
+[ext_resource path="res://assets/family/brother/2.png" type="Texture" id=3]
+[ext_resource path="res://assets/family/brother/1.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 45.5, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 2.0
 } ]
 
 [node name="Boy" type="Area2D"]
@@ -22,3 +25,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
+playing = true

@@ -2,7 +2,6 @@ extends Node2D
 
 var scientistDone
 
-onready var arrows = get_node("../AnimatedArrows")
 
 var speed = 10
 export var multiplier = 1
@@ -15,9 +14,8 @@ func _on_Area2D_body_entered(body):
 	if body.get_groups().has("player") and not scientistDone:
 		scientistDone = true
 		body.is_active = false
-		arrows.visible = false
 		$AudioStreamPlayer2D.play()
-		$TweenEnter.interpolate_property(self, "position", position, Vector2(position.x+360, position.y), 4, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$TweenEnter.interpolate_property(self, "position", position, Vector2(position.x+300, position.y), 4, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Path2D/PathFollow2D/AnimatedSpriteCar.play("scientist")
 		$TweenEnter.start()
 
@@ -41,7 +39,7 @@ func _physics_process(delta):
 		speed = speed * multiplier
 		var zoomX = camera.zoom.x
 		var zoomY = camera.zoom.x
-		camera.zoom = Vector2(zoomX * 1.005, zoomY * 1.005)		
+		camera.zoom = Vector2(zoomX * 1.002, zoomY * 1.002)		
 		$Path2D/PathFollow2D.set_offset($Path2D/PathFollow2D.get_offset()+speed*delta)
 		if $Path2D/PathFollow2D.offset > 800:
 			get_node("../TransitionScene").transition()
@@ -55,6 +53,7 @@ func scientist_roksana_leave():
 	$ShipTakeOff.play()
 	yield(get_tree().create_timer(1.5), "timeout")
 	fly_away = true
+	Inventory.game_complete=true
 	
 #func scientist_roksana_leave():
 #	$Camera2D.current = true

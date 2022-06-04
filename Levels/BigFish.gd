@@ -1,12 +1,12 @@
 extends AnimatedSprite
 
-export var distance = 500
+export var distance = 100
 
 var startX = 0
 
 var forward = true
 
-export var speed = 40
+export var speed = 80
 
 func _ready():
 	startX = position.x

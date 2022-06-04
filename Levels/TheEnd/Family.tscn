@@ -1,31 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://assets/family/dad/father.png" type="Texture" id=1]
-[ext_resource path="res://assets/family/brother/boy.png" type="Texture" id=2]
-[ext_resource path="res://assets/family/mum/mother.png" type="Texture" id=3]
+[ext_resource path="res://assets/family/dad/3.png" type="Texture" id=1]
+[ext_resource path="res://assets/family/brother/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/family/mum/mather3.png" type="Texture" id=3]
+[ext_resource path="res://assets/family/dad/4.png" type="Texture" id=4]
+[ext_resource path="res://assets/family/dad/1.png" type="Texture" id=5]
+[ext_resource path="res://assets/family/dad/2.png" type="Texture" id=6]
+[ext_resource path="res://assets/family/mum/mather2.png" type="Texture" id=7]
+[ext_resource path="res://assets/family/mum/mather1.png" type="Texture" id=8]
+[ext_resource path="res://assets/family/brother/3.png" type="Texture" id=9]
+[ext_resource path="res://assets/family/brother/2.png" type="Texture" id=10]
+[ext_resource path="res://assets/family/brother/4.png" type="Texture" id=11]
+[ext_resource path="res://assets/family/mum/mather4.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "idle",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [node name="Family" type="Node2D"]
@@ -40,6 +49,8 @@ flip_h = true
 position = Vector2( 79, -1 )
 frames = SubResource( 2 )
 animation = "idle"
+frame = 1
+playing = true
 flip_h = true
 
 [node name="brother" type="AnimatedSprite" parent="."]

@@ -14,8 +14,10 @@ func transition():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	print (anim_name)
 	if anim_name == "fade_to_black":
-		emit_signal("transition_done")
+		emit_signal("transition_done")		
 		var loadLevel = Inventory.levels[Inventory.currentLevel]
+		if Inventory.game_complete:
+			loadLevel = "res://Levels/MainMenu.tscn"
 		var _nextScene = get_tree().change_scene(loadLevel)
 
 
