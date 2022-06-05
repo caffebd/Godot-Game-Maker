@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/girl/walk/7.png" type="Texture" id=4]
 [ext_resource path="res://assets/girl/walk/2.png" type="Texture" id=5]
 [ext_resource path="res://assets/girl/climb-ladder/ladder 2.png" type="Texture" id=6]
-[ext_resource path="res://assets/objects/itime15.png" type="Texture" id=7]
+[ext_resource path="res://assets/iTime/itime 7.png" type="Texture" id=7]
 [ext_resource path="res://assets/girl/climb-vine/vine 2.png" type="Texture" id=8]
 [ext_resource path="res://assets/girl/walk/6.png" type="Texture" id=9]
 [ext_resource path="res://assets/girl/walk/3.png" type="Texture" id=10]

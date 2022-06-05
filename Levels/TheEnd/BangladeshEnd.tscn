@@ -540,7 +540,7 @@ distance = 200
 [node name="BigFish" parent="." instance=ExtResource( 39 )]
 visible = false
 position = Vector2( 622, 128 )
-frame = 2
+frame = 1
 distance = 90
 speed = 30
 

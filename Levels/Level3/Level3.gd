@@ -16,7 +16,7 @@ var mumQuestion = false
 var monkeyQuestion = false
 
 func _ready():
-	Inventory.canChangeLevel = true
+	Inventory.canChangeLevel = false
 	Inventory.currentLevel = 3
 
 #	Inventory.add_to_inventory("iTime15")

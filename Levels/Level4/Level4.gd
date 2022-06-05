@@ -21,7 +21,7 @@ var monkeyQuestion = false
 signal show_boat
 
 func _ready():
-	Inventory.canChangeLevel = true
+	Inventory.canChangeLevel = false
 	Inventory.currentLevel = 4
 	emit_signal("show_boat")
 	$RobotPlayer.climb_type = "climb_ladder"

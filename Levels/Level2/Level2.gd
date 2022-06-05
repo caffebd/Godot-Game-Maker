@@ -6,7 +6,7 @@ var dadNoMoreSpeak = false
 signal continue_conversation
 
 func _ready():
-	Inventory.canChangeLevel = true
+	Inventory.canChangeLevel = false
 	Inventory.currentLevel = 2	
 	#TEMP CODE FOR TEST
 #	Inventory.add_to_inventory("iTime15")
