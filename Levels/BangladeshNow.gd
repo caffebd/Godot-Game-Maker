@@ -14,8 +14,24 @@ var scientistDone = false
 
 func _ready():
 	Inventory.currentLevel = 1
+	_reset_values()
 	if Inventory.music_on:
 		$BackgroundMusic.play()
+
+func _reset_values():
+	Inventory.doctorChange = false
+	Inventory.fisherChange = false
+	Inventory.farmChange = false
+	Inventory.shopChange = false
+	Inventory.science_changed = false;
+	Inventory.game_complete = false	
+	#these should defualt true
+	Inventory.houseChange = true
+	Inventory.ufo = true
+
+	Inventory.myInventory.clear()
+	$RobotPlayer.update_inventory()
+	
 
 func _on_Shop_body_entered(body):
 	if body.get_groups().has("player") and not shopDone:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Font/07558_CenturyGothic.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/menu/2.png" type="Texture" id=2]
+[ext_resource path="res://assets/menu/Instructions-1620x1080.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Assets.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -12,7 +12,7 @@ font_data = ExtResource( 1 )
 default_font = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 51
+size = 41
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -65,16 +65,16 @@ margin_right = 480.0
 margin_bottom = 320.0
 
 [node name="TextureRect" type="TextureRect" parent="CenterContainer"]
-margin_top = 50.0
 margin_right = 960.0
-margin_bottom = 590.0
+margin_bottom = 640.0
 texture = ExtResource( 2 )
+stretch_mode = 6
 
 [node name="Menu" type="Button" parent="."]
-margin_left = 46.0
-margin_top = 74.0
-margin_right = 195.0
-margin_bottom = 144.0
+margin_left = 776.0
+margin_top = 542.0
+margin_right = 904.0
+margin_bottom = 608.0
 custom_fonts/font = SubResource( 3 )
 custom_styles/hover = SubResource( 5 )
 custom_styles/normal = SubResource( 4 )

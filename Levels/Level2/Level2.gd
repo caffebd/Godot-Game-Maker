@@ -66,6 +66,8 @@ func _on_Dad_body_entered(body):
 		else:
 			dadDone = true
 			_conversation("dadNoTissues", "roksanaDadNoTissues")
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true
 		return
 	
 	if dadDone and not dadNoMoreSpeak and body.get_groups().has("player"):

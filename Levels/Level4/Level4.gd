@@ -332,7 +332,7 @@ func _on_Boy_body_entered(body):
 		
 		if Inventory.myInventory.has("photograph"):
 			boyNoMoreSpeak = true
-			Inventory.homeChange = false
+			Inventory.houseChange = false
 			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
 			$RobotPlayer.update_inventory()
 			_conversation_l4("kobirPhoto", "roksanaKobirPhoto", true)
@@ -344,7 +344,7 @@ func _on_Boy_body_entered(body):
 	if boyDone and not boyNoMoreSpeak and body.get_groups().has("player"):
 		if Inventory.myInventory.has("photograph"):
 			boyNoMoreSpeak = true
-			Inventory.homeChange = false
+			Inventory.houseChange = false
 			Inventory.myInventory.remove(Inventory.myInventory.find("photograph"))
 			$RobotPlayer.update_inventory()
 			_conversation_l4("roksanaFoundPhoto", "kobirFoundPhoto", true)

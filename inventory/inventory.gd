@@ -9,10 +9,11 @@ var plantsSquashed = 0
 var tissues_collected = 0
 
 
-var doctorChange = true
-var fisherChange = true
-var farmChange = true
-var shopChange = true
+var doctorChange = false
+var fisherChange = false
+var farmChange = false
+var shopChange = false
+#these should defualt true
 var houseChange = true
 var ufo = true
 
@@ -34,7 +35,7 @@ var theStick = load ("res://assets/Forest Objects/stick.png")
 var theKey = load("res://assets/objects/key.png")
 var theGrass = load("res://assets/objects/grass.png")
 var iTime15 = load("res://assets/iTime/itime 7.png")
-var thePhoto = load("res://assets/Bangladesh Objects/housetemp.jpeg")
+var thePhoto = load("res://assets/Bangladesh Objects/Props/Village.png")
 var theGarlic = load("res://assets/Egypt/garlic.png")
 
 func _ready():

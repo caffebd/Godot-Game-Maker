@@ -21,19 +21,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "climb_ladder",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "walk",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "duck",
+"name": "idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 13 ) ],
@@ -41,19 +31,29 @@ animations = [ {
 "name": "attack",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 6 ) ],
 "loop": true,
-"name": "jump",
-"speed": 5.0
+"name": "climb_ladder",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "climb_vine",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "idle",
+"name": "duck",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -155,10 +155,10 @@ one_shot = true
 
 [node name="Speaker" type="Label" parent="."]
 visible = false
-margin_left = -151.0
-margin_top = 38.0
-margin_right = -75.0
-margin_bottom = 56.0
+margin_left = -166.0
+margin_top = 36.0
+margin_right = -90.0
+margin_bottom = 54.0
 custom_fonts/font = SubResource( 7 )
 custom_styles/normal = SubResource( 6 )
 text = "Roksana"
@@ -167,10 +167,10 @@ valign = 1
 
 [node name="MainSpokenText" parent="." instance=ExtResource( 21 )]
 visible = false
-margin_left = -150.0
-margin_top = 68.0
-margin_right = 154.0
-margin_bottom = 108.0
+margin_left = -167.0
+margin_top = 58.0
+margin_right = 167.0
+margin_bottom = 98.0
 rect_min_size = Vector2( 150, 40 )
 
 [node name="InventorySystem" parent="." instance=ExtResource( 20 )]

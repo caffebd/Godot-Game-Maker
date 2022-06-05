@@ -852,13 +852,13 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -419, -600 )
+position = Vector2( -421, -606 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )
 
 [node name="Photograph" parent="." instance=ExtResource( 11 )]
-position = Vector2( 620, -872 )
+position = Vector2( 624, -873 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 37 )

@@ -14,7 +14,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 49, 10 )
+extents = Vector2( 54.5, 10 )
 
 [node name="Dad" type="Area2D"]
 
@@ -25,5 +25,5 @@ frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 1 )
+position = Vector2( 4.5, 1 )
 shape = SubResource( 2 )

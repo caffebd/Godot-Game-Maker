@@ -10,21 +10,23 @@
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1600.0
+margin_bottom = 1600.0
 texture = ExtResource( 1 )
-
-[node name="Girl" type="Sprite" parent="."]
-position = Vector2( 294, 327 )
-scale = Vector2( 5, 5 )
-texture = ExtResource( 2 )
-
-[node name="With" type="Sprite" parent="."]
-position = Vector2( 603, 326 )
-scale = Vector2( -4, 4 )
 
 [node name="TransitionScene" parent="." instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -25.748
 autoplay = true
+
+[node name="Girl" type="Sprite" parent="."]
+position = Vector2( 645, 632 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="With" type="Sprite" parent="."]
+position = Vector2( -197, -474 )
+rotation = 3.14159
+scale = Vector2( 4, -4 )
