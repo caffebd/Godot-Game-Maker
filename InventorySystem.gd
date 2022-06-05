@@ -5,6 +5,9 @@ var currentlySelected: int = -1
 
 
 func _on_ItemList_item_selected(index):
+	if !get_parent().is_active or !get_parent().canMove:
+		return
+		
 	print (Inventory.myInventory[index])
 	
 	if Inventory.myInventory[index] == "iTime15":

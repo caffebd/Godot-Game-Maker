@@ -30,7 +30,7 @@ func _ready():
 		Inventory.farmChange = true
 	if Inventory.myInventory.has("fruit"):
 		Inventory.farmChange = true
-	if Inventory.tissues_collected <10:
+	if Inventory.tissues_collected <5:
 		Inventory.doctorChange = true
 	_the_changes()
 

@@ -54,7 +54,7 @@ shape = SubResource( 2 )
 
 [node name="StickHint" type="Sprite" parent="Base"]
 visible = false
-position = Vector2( 0, -66 )
+position = Vector2( 1, -35 )
 texture = ExtResource( 4 )
 
 [node name="Block1" type="StaticBody2D" parent="Base"]

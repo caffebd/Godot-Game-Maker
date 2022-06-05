@@ -1062,28 +1062,8 @@ position = Vector2( 559, -573 )
 collision_layer = 8
 collision_mask = 8
 
-[node name="Tissue3" parent="." instance=ExtResource( 30 )]
-position = Vector2( 811, -702 )
-collision_layer = 8
-collision_mask = 8
-
 [node name="Tissue4" parent="." instance=ExtResource( 30 )]
 position = Vector2( 1867, -581 )
-collision_layer = 8
-collision_mask = 8
-
-[node name="Tissue5" parent="." instance=ExtResource( 30 )]
-position = Vector2( 286, -701 )
-collision_layer = 8
-collision_mask = 8
-
-[node name="Tissue6" parent="." instance=ExtResource( 30 )]
-position = Vector2( 1399, -1003 )
-collision_layer = 8
-collision_mask = 8
-
-[node name="Tissue7" parent="." instance=ExtResource( 30 )]
-position = Vector2( 1871, -1214 )
 collision_layer = 8
 collision_mask = 8
 
@@ -1094,11 +1074,6 @@ collision_mask = 8
 
 [node name="Tissue9" parent="." instance=ExtResource( 30 )]
 position = Vector2( 902, -1566 )
-collision_layer = 8
-collision_mask = 8
-
-[node name="Tissue10" parent="." instance=ExtResource( 30 )]
-position = Vector2( 1300, -1516 )
 collision_layer = 8
 collision_mask = 8
 
@@ -1161,7 +1136,7 @@ position = Vector2( -281, -587 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -35.341
+volume_db = -30.797
 autoplay = true
 
 [node name="TransitionScene" parent="." instance=ExtResource( 35 )]
@@ -1208,13 +1183,8 @@ autoplay = true
 [connection signal="body_exited" from="AllLadders/Ladder26" to="RobotPlayer" method="_on_Ladder_body_exited"]
 [connection signal="tissue_collected" from="Tissue2" to="TissueCounter" method="_on_Tissue_tissue_collected"]
 [connection signal="tissue_collected" from="Tissue11" to="TissueCounter" method="_on_Tissue_tissue_collected"]
-[connection signal="tissue_collected" from="Tissue3" to="TissueCounter" method="_on_Tissue_tissue_collected"]
 [connection signal="tissue_collected" from="Tissue4" to="TissueCounter" method="_on_Tissue_tissue_collected"]
-[connection signal="tissue_collected" from="Tissue5" to="TissueCounter" method="_on_Tissue_tissue_collected"]
-[connection signal="tissue_collected" from="Tissue6" to="TissueCounter" method="_on_Tissue_tissue_collected"]
-[connection signal="tissue_collected" from="Tissue7" to="TissueCounter" method="_on_Tissue_tissue_collected"]
 [connection signal="tissue_collected" from="Tissue8" to="TissueCounter" method="_on_Tissue_tissue_collected"]
 [connection signal="tissue_collected" from="Tissue9" to="TissueCounter" method="_on_Tissue_tissue_collected"]
-[connection signal="tissue_collected" from="Tissue10" to="TissueCounter" method="_on_Tissue_tissue_collected"]
 [connection signal="body_entered" from="Dad" to="." method="_on_Dad_body_entered"]
 [connection signal="body_exited" from="Dad" to="." method="_on_Dad_body_exited"]

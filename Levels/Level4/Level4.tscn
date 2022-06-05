@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://assets/tiles-pixel/grass-tile.png" type="Texture" id=1]
 [ext_resource path="res://assets/tiles-pixel/tileYellow_04.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Levels/Level4/DoctorHint.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Level4/StoreHint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Levels/Level4/FisherHint.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/Egypt/Egypt_test2.png" type="Texture" id=7]
 [ext_resource path="res://Levels/Level4/FarmHint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Levels/Level4/Level4.gd" type="Script" id=9]
 [ext_resource path="res://Levels/Level4/Boy.tscn" type="PackedScene" id=10]
@@ -670,7 +669,6 @@ visible = false
 position = Vector2( -655, -90 )
 scale = Vector2( 0.25, 0.25 )
 z_index = -100
-texture = ExtResource( 7 )
 
 [node name="TestTileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
@@ -790,7 +788,7 @@ position = Vector2( 90, -4 )
 position = Vector2( 122, -494 )
 script = SubResource( 30 )
 duration = 4.0
-move_to = Vector2( 240, 0 )
+move_to = Vector2( 245, 0 )
 active = false
 
 [node name="BoatSprite" parent="LogBoat2/Base" index="1"]
@@ -828,7 +826,7 @@ position = Vector2( -776, -248 )
 position = Vector2( -23, -514 )
 
 [node name="Stick6" parent="." instance=ExtResource( 17 )]
-position = Vector2( 735, -825 )
+position = Vector2( 736, -825 )
 
 [node name="MudFloor" parent="." instance=ExtResource( 14 )]
 position = Vector2( -568, -344 )
@@ -852,7 +850,7 @@ position = Vector2( -40, -808 )
 position = Vector2( -136, -256 )
 
 [node name="RobotPlayer" parent="." instance=ExtResource( 3 )]
-position = Vector2( -421, -606 )
+position = Vector2( -432, -598 )
 
 [node name="CollisionShape2D" parent="RobotPlayer" index="1"]
 position = Vector2( 0, 5 )

@@ -60,20 +60,23 @@ func _on_Dad_body_entered(body):
 	if not dadDone and body.get_groups().has("player"):
 		dadDone = true
 		
-		if Inventory.tissues_collected == 10:
+		if Inventory.tissues_collected == 5:
 			dadNoMoreSpeak = true
 			_conversation("dadTissues", "roksanaDadTissues")
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true			
 		else:
 			dadDone = true
 			_conversation("dadNoTissues", "roksanaDadNoTissues")
-			$RobotPlayer/iTime.visible = true
-			Inventory.canChangeLevel = true
+
 		return
 	
 	if dadDone and not dadNoMoreSpeak and body.get_groups().has("player"):
-		if Inventory.tissues_collected == 10:
+		if Inventory.tissues_collected == 5:
 			dadNoMoreSpeak = true
 			_conversation("roksanaFoundAllTissues", "dadFoundAllTissues")
+			$RobotPlayer/iTime.visible = true
+			Inventory.canChangeLevel = true			
 		else:
 			$RobotPlayer/iTime.visible = true
 			Inventory.canChangeLevel = true

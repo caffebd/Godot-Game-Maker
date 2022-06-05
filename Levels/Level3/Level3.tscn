@@ -301,7 +301,7 @@ position = Vector2( 422, -424 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -52.812
+volume_db = -47.763
 autoplay = true
 
 [node name="TransitionScene" parent="." instance=ExtResource( 14 )]

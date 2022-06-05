@@ -3,7 +3,7 @@ var tissue = 0
 
 
 func _ready():
-	$Tissue.text = String(tissue) + "/10"
+	$Tissue.text = String(tissue) + "/5"
 
 	
 
